@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symfony{% endblock %}
+
+{% block articleDetail %}
+
+    <div class="col-sm-8 offset-sm-2 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+        <div class="article-page-title text-center">
+            Découvrons Symfony
+        </div>
+    </div>
+
+    <div class="buttonUp">
+        <a href="#top" id="btn-to-top" title="Retour vers le haut"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card article-page-card">
+            <img class="card-img-top" src="{{ asset('images/blog-banner1.png') }}" alt="Card image cap">
+            <div class="card-body">
+                <div class="article-page-card__cnt">
+                    <h1 class="card-title article-page-card__name">Symfony <i class="fab fa-symfony"></i></h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2>
+                        Un framework web qui m'a adopté !
+                    </h2>
+                    <br/>
+                    <div class="justify">
+                        <p>
+                            Ah oui, c'est la galère ! (Et je ne parle pas du bâteau méditerranéen).
+                            <br/>
+                            Ce sont les premiers mots qui me sont venus lorsque j'ai découvert le
+                            <a href="https://symfony.com/" target="_blank" title="site du framework Symfony">
+                                framework Symfony
+                            </a>,
+                            ça commence bien hein ?! Et oui, au moment où j'ai commencé mon premier projet avec Symfony,
+                            l'utilisation du framework était obligatoire, pourtant je n'avais rien demandé moi, j'étais bien avec
+                            mon premier projet Wordpress et mon second concernant la préparation d'un salon sans réalisation de
+                            site internet.
+                        </p>
+                        <p>
+                            Bon à ce moment là, c'était le saut dans la matrice, enfin plutôt dans le grand bain du code, en effet,
+                            je n'avais jamais purement codé et là pas le choix de contourner le "problème". Heureusement pour moi, les cours
+                            concernant le projet m'avaient donné quelques bases concernant le fonctionnement de Symfony mais bon, vous
+                            connaissez la différence entre la théorie et la pratique ! Après des essais pas bien concluants et mes recherches
+                            sur notre ami en commun Google (je ne vous mets pas le lien, vous le trouverez par vous-même !),
+                            et le site
+                            <a href="https://stackoverflow.com/" target="_blank" title="site de stack overflow">
+                                <i class="fab fa-stack-overflow"></i> Stack overflow
+                            </a>
+                            , j'ai enfin réussi à mettre quelque chose de correct en place.
+                        </p>
+                        <p>
+                            Construit sous l'architecture
+                            <abbr title="Modèle-Vue-Contrôleur">
+                                MVC
+                            </abbr>
+                            , le framework Symfony m'a permis de mieux appréhender la construction, la gestion de données et l'intéraction
+                            client-serveur d'un site internet avec l'aide du langage PHP. Depuis, dès que les obligations à respecter
+                            du projet me le permettent, je construis sans réfléchir trop longtemps (contrairement à avant !) ce dernier avec
+                            le framework Symfony que je trouve maintenant vraiment facile à mettre en place et agréable à coder. Et pour
+                            plus d'intéractivité sur les sites que je réalise, vue que je commence à avoir en main les différents langages
+                            de base (HTML, CSS, PHP), je me forme au langage orienté client Javascript qui permet aux utilisateurs des
+                            sites d'avoir plaisir à les utiliser.
+                        </p>
+                        <p>
+                            Pour conclure, avec un début chaotique au vue de ma méconnaissance de cet outils (normal vous allez me dire !),
+                            je ne peux que vous conseiller de tester et de persévérer dans ce framework tant il a de potentiel et de
+                            "facilité" dans sa mise en place et son développement. Mélangez ça avec les autres langages et vous aurez un site
+                            internet plaisant pour vous et pour vos visiteurs et construit sans les limites que Wordpress peut parfois nous
+                            montrer.
+                            <br/>
+                            Et puis c'est super gratifiant de savoir coder un site à partir de rien et de pouvoir obtenir le résultat
+                            escompté, sans tricher avec Wordpress (non je plaisante, c'est bien WP) ! Attention, je n'ai pas dis que je ne
+                            m'étais pas arraché les cheveux au cours de mes projets Symfony hein !
+                            Mais bon à force d'expérience, de motivation et d'huile de coude, on arrive à faire de chouettes choses, non ?!
+                        </p>
+                        <br/>
+                    </div>
+                    <div class="offset-lg-8 offset-md-9 italic">
+                        <p>Ressentiment publié le 1er juillet 2020</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-share-social-btn">
+                <button class="btn share_twitter" onclick="analyticsSharingArticle('twitter', 'Symfony')" data-url="https://quentin-civiale.fr/blog/article/symfony">
+                    <i class="fab fa-twitter"></i>
+                    Partager sur Twitter
+                </button>
+
+                <button class="btn share_facebook" onclick="analyticsSharingArticle('facebook', 'Symfony')" data-url="https://quentin-civiale.fr/blog/article/symfony">
+                    <i class="fab fa-facebook-f"></i>
+                    Partager sur Facebook
+                </button>
+
+                <button class="btn share_linkedin" onclick="analyticsSharingArticle('linkedin', 'Symfony')" data-url="https://quentin-civiale.fr/blog/article/symfony">
+                    <i class="fab fa-linkedin-in"></i>
+                    Partager sur Linkedin
+                </button>
+            </div>
+
+            <div class="col-lg-10 offset-lg-1">
+                <div>
+                    <a href="{{ path('blog') }}" class="link_to_article_view"><i class="fas fa-arrow-left"></i> Retour au blog </a>
+                </div>
+
+                <br/>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

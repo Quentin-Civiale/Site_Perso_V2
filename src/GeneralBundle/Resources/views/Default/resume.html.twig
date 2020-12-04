@@ -1,0 +1,428 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parcours{% endblock %}
+
+{% block resume %}
+
+    <div class="col-sm-8 offset-sm-2 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+        <div class="resume-title text-center">
+            Mon Curriculum Vitae
+        </div>
+    </div>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <div class="card resume-card">
+                    <div class="card-body">
+                        <div class="resume-card__img">
+                            <img src="{{ asset('images/Image 2.jpg') }}" class="profile-img-resume" alt="profile card">
+                        </div>
+                        <div class="resume-card__cnt">
+                            <p class="card-title resume-card__name">Quentin Civiale</p>
+                            <p class="card-subtitle resume-card__age" id="age"> </p>
+{#                            <p class="card-subtitle resume-card__phone-number">06 77 14 32 77</p>#}
+                            <p class="card-subtitle resume-card__txt">Chef de Projet Digital à
+                                <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>
+                            </p>
+                            <div class="resume-card-mail">
+                                <span class="resume-card-mail__icon">
+                                    <i class="fas fa-at icon fa-fw"></i>
+                                </span>
+                                <span class="resume-card-mail__txt">
+                                    <a href="mailto:quentin.civiale@gmail.com" id="mail_me" title="Contactez-moi !">quentin.civiale@gmail.com</a>
+                                </span>
+                            </div>
+                            <div class="resume-card-loc">
+                                <span class="resume-card-loc__icon">
+                                    <i class="fas fa-map-marker-alt icon fa-fw"></i>
+                                </span>
+                                <span class="resume-card-loc__txt">
+                                    Clermont-Ferrand, France
+                                </span>
+                            </div>
+                            <div class="resume-card-move">
+                                <span class="resume-card-move__icon">
+                                    <i class="fas fa-car icon fa-fw"></i>
+                                </span>
+                                <span class="resume-card-move__txt">
+                                    Permis B avec véhicule
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row resume">
+                                <button class="btn btn-resume btn-lg" onclick="analyticsDownloadCV()">
+                                    <a href="{{ asset('images/CV.pdf') }}" download="CV - Civiale Quentin.pdf">
+                                        <i class="fas fa-file-download"></i> Télécharger mon CV
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="card skills-card">
+                    <div class="card-body">
+                        <div class="col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-12">
+                            <h1 class="skills-card__title">Compétences informatiques</h1>
+                            <br/>
+                            <div class="skills-list">
+                                <div class="skill-group">
+                                    <h2>Frontend</h2>
+                                    <div class="skills">
+                                        <p> - HTML5</p>
+                                        <p> - CSS3</p>
+                                        <p> - Javascript</p>
+                                    </div>
+                                </div>
+                                <div class="skill-group">
+                                    <h2>Backend</h2>
+                                    <div class="skills">
+                                        <p> - PHP</p>
+                                        <p> - MySQL</p>
+                                    </div>
+                                </div>
+                                <div class="skill-group">
+                                    <h2>Framework</h2>
+                                    <div class="skills">
+                                        <p> - Bootstrap</p>
+                                        <p> - Materialize</p>
+                                        <p> - Symfony</p>
+                                        <p> - jQuery</p>
+                                    </div>
+                                </div>
+                                <div class="skill-group">
+                                    <h2>CMS</h2>
+                                    <div class="skills">
+                                        <p> - Wordpress</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="card diverse-card">
+                    <div class="card-body">
+                        <div class="col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-12">
+                            <h1 class="diverse-card__title">Divers</h1>
+                            <br/>
+                            <div class="diverse-list">
+                                <div class="diverse-group">
+                                    <i class="fas fa-language fa-fw icon-diverse"></i><span class="icon-diverse-title">Langues</span>
+                                    <ul>
+                                        <li>Français</li>
+                                        <li>Anglais: écris, parlé</li>
+                                        <li>Espagnol: niveau lycée</li>
+                                    </ul>
+                                </div>
+                                <div class="diverse-group">
+                                    <i class="fas fa-skiing fa-fw icon-diverse"></i><span class="icon-diverse-title">Sports</span>
+                                    <ul>
+                                        <li>Ski</li>
+                                        <li>Tennis de table</li>
+                                        <li>Patinoire</li>
+                                        <li>Randonnée</li>
+                                    </ul>
+                                </div>
+                                <div class="diverse-group">
+                                    <i class="fas fa-film fa-fw icon-diverse"></i><span class="icon-diverse-title">Loisirs</span>
+                                    <ul>
+                                        <li>Cinéma</li>
+                                        <li>Informatique</li>
+                                        <li>Musique</li>
+                                        <li>Photographie</li>
+                                        <li>Travail du bois</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="buttonUp">
+                    <a href="#top" id="btn-to-top" title="Retour vers le haut"><i class="fas fa-chevron-up"></i></a>
+                </div>
+
+                <script>
+                    // var current_year = new Date().getUTCFullYear();
+                    // var birthdate = new Date("05/20/1991").getFullYear();
+                    // var age = (current_year - birthdate);
+
+                    function getAge(date) {
+                        var diff = Date. now() - date. getTime();
+                        var age = new Date(diff);
+                        return Math. abs(age. getUTCFullYear() - 1970);
+                    }
+                    var age_year = getAge(new Date(1991, 5, 20)); //Date(année, mois, jour)
+                    // document.write("Vous avez " + age_year + " ans");
+                    document.getElementById("age").innerHTML = age_year + " ans";
+                </script>
+
+            </div>
+
+            <div class="col-lg-9 educationExperience_desktopView">
+                <div class="card content-card">
+                    <div class="card-body">
+                        <div class="col-lg-10 offset-lg-1 education-card__cnt">
+                            <h1 class="education-card__title">Formation</h1>
+                            <div class="timeline-education">
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Depuis Juin 2016</h5>
+                                        <p>OpenClassrooms</p>
+                                        <p>Formation sur internet</p>
+                                    </div>
+                                    <div class="education-type">
+                                        <p>Formation Chef de projet Digital</p>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Octobre 2013 - Novembre 2013</h5>
+                                        <p>CNPC</p>
+                                        <p>Pralognan la Vanoise (73)</p>
+                                    </div>
+                                    <div class="education-type">
+                                        <p>Formation Conseiller Technique ski et vente</p>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>2009 - 2012</h5>
+                                        <p>Institution Saint-Alyre</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                    </div>
+                                    <div class="education-type">
+                                        <p>BTS Assistant de Gestion PME-PMI à référentiel commun européen</p>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>2008 - 2009</h5>
+                                        <p>Institution Saint-Alyre</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                    </div>
+                                    <div class="education-type">
+                                        <p>Baccalauréat : Sciences et Technologies de la Gestion - Spécialité Comptabilité et Finance d’Entreprise</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="card content-card">
+                    <div class="card-body">
+                        <div class="col-lg-10 offset-lg-1 experience-card__cnt">
+                            <h1 class="experience-card__title">Expériences professionnelles</h1>
+                            <div class="timeline-experience">
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Décembre 2015 - Avril 2016</h5>
+                                        <p>Skiset - L’Eterlou Sports</p>
+                                        <p>St François Longchamp (73)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Conseiller Technique ski et vente</p>
+                                        <ul>
+                                            <li>Vente d'articles de sports (vêtements et équipements)</li>
+                                            <li>Location de matériels de sports d'hiver</li>
+                                            <li>Réparation et entretien des équipements de glisse</li>
+                                            <li>Gestion des encaissements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Juillet 2015 - Août 2015</h5>
+                                        <p>Domaine du Lac Chambon</p>
+                                        <p>Murol (63)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Vendeur Boutique de Souvenirs et Loisirs de Plein Air</p>
+                                        <ul>
+                                            <li>Vente d'objets souvenirs de la région</li>
+                                            <li>Gestion de la location de pédalos et de kayak</li>
+                                            <li>Gestion des stocks et des encaissements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Décembre 2014 - Avril 2015</h5>
+                                        <p>Skiset - L’Eterlou Sports</p>
+                                        <p>St François Longchamp (73)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Conseiller Technique ski et vente</p>
+                                        <ul>
+                                            <li>Vente d'articles de sports (vêtements et équipements)</li>
+                                            <li>Location de matériels de sports d'hiver</li>
+                                            <li>Réparation et entretien des équipements de glisse</li>
+                                            <li>Gestion des encaissements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Décembre 2013 - Avril 2014</h5>
+                                        <p>Skiset - L’Eterlou Sports</p>
+                                        <p>St François Longchamp (73)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Conseiller Technique ski et vente</p>
+                                        <ul>
+                                            <li>Vente d'articles de sports (vêtements et équipements)</li>
+                                            <li>Location de matériels de sports d'hiver</li>
+                                            <li>Réparation et entretien des équipements de glisse</li>
+                                            <li>Gestion des encaissements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Juin 2013 - Août 2013</h5>
+                                        <p>Menuiserie Mègemont</p>
+                                        <p>Olby (63)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Poseur de menuiseries diverses (portes, fenêtres, …)</p>
+                                        <ul>
+                                            <li>Pose de menuiseries chez les particuliers</li>
+                                            <li>Aide et manutention à l'atelier</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Avril 2012 - Mai 2013</h5>
+                                        <p>Coliposte (RAS Intérim)</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Agent de Tri Coliposte (intérimaire)</p>
+                                        <ul>
+                                            <li>Répartition des casiers de colis selon la destination</li>
+                                            <li>Tri des colis selon leur taille</li>
+                                            <li>Chargement et déchargement des casiers de colis des camions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Janvier 2012 - Février 2012</h5>
+                                        <p>Tom Rowan Design</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                        <p> -> Stage de BTS 2ème année</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Organisation d’expositions, création de publicité</p>
+                                        <ul>
+                                            <li>Prise de contact avec les communes pour organiser des expositions</li>
+                                            <li>Création de publicité pour l'exposition</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Août 2011</h5>
+                                        <p>Direction de la Logistique</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Emploi saisonnier - Installations diverses pour les évènements estivaux (podiums, …)</p>
+                                        <ul>
+                                            <li>Installations de podiums pour les évènements estivaux de la ville</li>
+                                            <li>Déménagement et emménagement de locaux municipaux</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Janvier 2011 - Février 2011</h5>
+                                        <p>Auversun</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                        <p> -> Stage de BTS 2ème année</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Création de fiches de sécurité des postes de travail</p>
+                                        <ul>
+                                            <li>Étude des différents postes de travail de la ligne de montage de panneaux solaires</li>
+                                            <li>Échanges avec les employés sur les dangers et obligations des postes</li>
+                                            <li>Création de fiches de sécurité à afficher sur les différents postes de travail</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Mai 2010- Juin 2010</h5>
+                                        <p>Aclim</p>
+                                        <p>Clermont-Ferrand (63)</p>
+                                        <p> -> Stage de BTS 1ère année</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Assistant agent comptable</p>
+                                        <ul>
+                                            <li>Comptabilité générale</li>
+                                            <li>Création de commandes clients et fournisseurs</li>
+                                            <li>Réalisation de factures</li>
+                                            <li>Réception des commandes et vérification</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Étés 2006 à 2010</h5>
+                                        <p>Camping des Blats</p>
+                                        <p>St Jacques des Blats (15)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Emploi saisonnier Accueil et Agent d’entretien</p>
+                                        <ul>
+                                            <li>Accueil des vacanciers</li>
+                                            <li>Entretiens des locaux (accueil, sanitaire, emplacements)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="entry">
+                                    <div class="title">
+                                        <h5>Mai 2005</h5>
+                                        <p>Menuiserie Theron</p>
+                                        <p>Vic sur Cère (15)</p>
+                                    </div>
+                                    <div class="experience-type">
+                                        <p>Stage de découverte d’entreprise > Stage de 4ème</p>
+                                        <ul>
+                                            <li>Découverte du métier de menuisier</li>
+                                            <li>Travail du bois</li>
+                                            <li>Visite de chantiers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include '@General/Default/resumeMobile.html.twig' %}
+
+        </div>
+
+    </div>
+
+{% endblock %}

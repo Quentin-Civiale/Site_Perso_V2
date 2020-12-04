@@ -1,0 +1,715 @@
+.color {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --cv-white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Généralités */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--cv-main-font-color);
+}
+
+/* Variable CSS des couleurs */
+:root {
+    --cv-main-color-one: #394c40 !important;
+    --cv-main-color-two: #CA8445 !important;
+    --cv-main-font-color: #69623B !important;
+    --cv-white-color: #ffffff !important;
+}
+
+/*:root {*/
+/*    --cv-main-color-one: green !important;*/
+/*    --cv-main-color-subone: #ea6200 !important;*/
+/*    --cv-main-color-two: #ffc107 !important;*/
+/*    --cv-main-font-color: #324e63 !important;*/
+/*    --cv-white-color: #ffffff !important;*/
+/*    --gradient-one: linear-gradient(-20deg, var(--cv-main-color-two) 0%, var(--cv-main-color-one) 100%) !important;*/
+/*    --gradient-two: linear-gradient(-20deg, var(--cv-main-color-subone) 0%, var(--cv-main-color-one) 100%) !important;*/
+/*    --gradient-three: linear-gradient(45deg, rgba(36,248,255,1) 0%, rgba(5,118,255,1) 100%) !important;*/
+/*}*/
+
+/* Fond coloré */
+.wrapper {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 50px 20px !important;
+    padding-top: 150px !important;
+    /*display: flex !important;*/
+    /*background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%) !important;*/
+    background-image: linear-gradient(130deg, var(--cv-main-color-one) 10%, var(--cv-main-color-two) 100%) !important;
+}
+
+/*Gestion des Titres*/
+h1{
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    color: var(--cv-main-color-one) !important;
+}
+h2 {
+    font-size: 25px !important;
+    font-weight: 400 !important;
+    color: var(--cv-main-font-color) !important;
+}
+h3 {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    color: var(--cv-main-font-color) !important;
+}
+h4 {
+    font-size: 20px !important;
+    color: var(--cv-main-color-one) !important;
+}
+
+h5 {
+    font-size: 20px !important;
+    color: var(--cv-main-color-two) !important;
+}
+
+/* Police en italique */
+.italic {
+    font-style: italic !important;
+}
+
+.justify {
+    text-align: justify !important;
+}
+
+.center {
+    /*text-align: center !important;*/
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Bouton de retour vers le haut de la page */
+#btn-to-top {
+    background: var(--cv-main-color-one) !important;
+    color: var(--cv-white-color) !important;
+    font-size: 20px;
+    height: 45px;
+    width: 45px;
+    line-height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    text-align: center;
+    z-index: 9999;
+    -moz-transition: background 0.8s ease;
+    -o-transition: background 0.8s ease;
+    -webkit-transition: background 0.8s ease;
+    transition: background-color .4s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    display: inline-block;
+    margin: 30px;
+}
+
+#btn-to-top:hover {
+    background-color: var(--cv-white-color) !important;
+    cursor: pointer !important;
+    color: var(--cv-main-color-one) !important;
+    border: 2px solid var(--cv-main-color-one) !important;
+}
+
+#btn-to-top:active {
+    background-color: #666 !important;
+}
+
+#btn-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Titre de la page */
+
+.resume-title {
+    font-size: 72px !important;
+    font-weight: lighter !important;
+    color: var(--cv-white-color) !important;
+    margin-top: -120px !important;
+    margin-bottom: 40px !important;
+    /*-------Texte avec image en fond--------*/
+    background: url("../images/email-pattern.png") no-repeat;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card du profil */
+
+/* Design de la card */
+.resume-card, .content-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+    overflow: initial !important;
+}
+
+/* Format du cercle pour l'image */
+.resume-card__img {
+    width: 120px !important;
+    height: 120px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateY(-50%) !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 4 !important;
+    box-shadow: 0px 5px 50px 0px var(--cv-main-color-one), 0px 0px 0px 7px var(--cv-main-color-two) !important;
+}
+
+/* Format de l'image de profil */
+.profile-img-resume {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+/*.resume-card__name {*/
+/*    color: var(--cv-main-color-one) !important;*/
+/*}*/
+
+/* Intérieur de la card */
+.resume-card__cnt {
+    margin-top: -65px !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 40px !important;
+    transition: all .3s !important;
+}
+
+/* Infos du profil */
+.resume-card__name {
+    font-weight: 500 !important;
+    font-size: 38px !important;
+    color: var(--cv-main-color-one) !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.resume-card__age {
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    color: var(--cv-main-font-color) !important;
+    margin-bottom: 15px !important;
+}
+.resume-card__phone-number {
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    color: var(--cv-main-font-color) !important;
+    margin-bottom: 15px !important;
+}
+.resume-card__txt {
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    color: var(--cv-main-font-color) !important;
+    margin-bottom: 15px !important;
+}
+.resume-card__txt a {
+    color: var(--cv-main-font-color) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+.resume-card__txt a:hover {
+    color: var(--cv-main-color-two) !important;
+    text-decoration: none !important;
+}
+/*.resume-card__txt strong {*/
+/*    font-weight: 700 !important;*/
+/*}*/
+
+/* Mail*/
+.resume-card-mail {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+}
+.resume-card-mail__icon {
+    display: inline-flex !important;
+    font-size: 27px !important;
+    margin-right: 0 !important;
+    /*color: #6944ff !important;*/
+}
+#mail_me {
+    text-decoration: none !important;
+    color: var(--cv-main-font-color) !important;
+}
+#mail_me:hover {
+    color: var(--cv-main-color-two) !important;
+}
+
+/* Lieu */
+.resume-card-loc {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+}
+.resume-card-loc__icon {
+    display: inline-flex !important;
+    font-size: 27px !important;
+    margin-right: 0 !important;
+    /*color: #6944ff !important;*/
+}
+
+/* Permis */
+.resume-card-move {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+}
+.resume-card-move__icon {
+    display: inline-flex !important;
+    font-size: 27px !important;
+    margin-right: 0 !important;
+    /*color: #6944ff !important;*/
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Compétences informatiques */
+
+/* Design de la card */
+.skills-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+
+.skills-card__title {
+    /*font-weight: 700 !important;*/
+    /*font-size: 34px !important;*/
+    /*color: var(--cv-main-color-one) !important;*/
+}
+
+/* Espacement des compétences sous h2 */
+.skills {
+    padding-left: 25px !important;
+}
+
+/* Points de compétences */
+/*.skills section {*/
+/*    overflow: auto !important;*/
+/*    margin-bottom: 0 !important;*/
+/*    !*text-align: center !important;*!*/
+/*    !*justify-content: center !important;*!*/
+/*    !*align-items: center !important;*!*/
+/*}*/
+/*.skills section p {*/
+/*    float: left !important;*/
+/*    max-width: 50% !important;*/
+/*    !*word-break: break-word !important;*!*/
+/*    margin-right: 80px !important;*/
+/*}*/
+/*.skills section span {*/
+/*    display: inline-block !important;*/
+/*    width: 15px !important;*/
+/*    height: 15px !important;*/
+/*    background: #bbb !important;*/
+/*    border-radius: 15px !important;*/
+/*    float: right !important;*/
+/*    margin: 0 1px !important;*/
+/*    margin-top: 5px !important;*/
+/*}*/
+/*.skills section span.full {*/
+/*    !*background: #ff5335 !important;*!*/
+/*    !*background: var(--cv-main-color-one) !important;*!*/
+/*    background-image: linear-gradient(-20deg, var(--cv-main-color-two) 0%, var(--cv-main-color-one) 100%) !important;*/
+/*}*/
+
+/*.skills .frntnd section p, .skills .bcknd section p {*/
+/*    margin-right: 84px !important;*/
+/*}*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Divers */
+
+/* Design de la card */
+.diverse-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+
+.diverse-list {
+    /*margin-left: 5px !important;*/
+}
+
+.diverse-card__title {
+    /*font-weight: 700 !important;*/
+    /*font-size: 34px !important;*/
+    /*color: var(--cv-main-color-one) !important;*/
+}
+
+.icon-diverse {
+    font-size: 45px !important;
+}
+
+.icon-diverse-title {
+    margin-left: 10px !important;
+    font-size: 25px !important;
+    font-weight: 500 !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Bouton téléchargement du CV */
+
+.resume {
+    margin-top: 25px !important;
+    text-align: center !important;
+}
+
+.btn-resume {
+    display: inline-block !important;
+    margin:0 auto !important;
+    color: var(--white-color);
+    border-radius: 30px !important;
+    background: var(--main-color-one) !important;
+}
+.btn-resume:hover {
+    background: linear-gradient(130deg, var(--main-color-one), var(--main-color-two)) !important;
+    box-shadow: 0px 7px 30px var(--main-font-color) !important;
+}
+.btn-resume a {
+    text-decoration: none !important;
+    color: var(--white-color);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Formation */
+
+.education-card__title {
+    /*font-weight: 700 !important;*/
+    /*font-size: 34px !important;*/
+    /*color: var(--cv-main-color-one) !important;*/
+}
+
+/* Timeline */
+
+.timeline-education {
+    width: 100% !important;
+    max-width: 900px !important;
+    /*background: #fff !important;*/
+    padding:  50px 50px 20px 50px !important;
+    position: relative !important;
+    /*box-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2) !important;*/
+}
+.timeline-education:before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0px !important;
+    left:calc(33% + 15px) !important;
+    bottom: 0px !important;
+    width: 4px !important;
+    background: var(--cv-main-color-two) !important;
+    /*background: #ddd !important;*/
+}
+.timeline-education:after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+.entry {
+    clear: both !important;
+    text-align: left !important;
+    position: relative !important;
+}
+.entry .title {
+    margin-bottom: .5em !important;
+    float: left !important;
+    width: 33% !important;
+    padding-right: 30px !important;
+    text-align: right !important;
+    position: relative !important;
+    padding-bottom: 25px !important;
+}
+.entry .title:before {
+    content: '' !important;
+    position: absolute !important;
+    width: 16px !important;
+    height: 16px !important;
+    border: 4px solid var(--cv-main-color-one) !important;
+    background-color: var(--cv-white-color) !important;
+    border-radius:100% !important;
+    top: 15% !important;
+    right: -8px !important;
+    z-index: 99 !important;
+}
+.entry .title h5 {
+    margin: 0 !important;
+    font-size: 18px !important;
+}
+.entry .title p {
+    margin: 0 !important;
+    font-size: 100% !important;
+}
+
+.entry .education-type {
+    margin: 0 0 3em !important;
+    float: right !important;
+    width: 66% !important;
+    padding-left: 30px !important;
+    font-size: 18px !important;
+}
+.entry .education-type p {
+    line-height: 1.4em !important;
+}
+.entry .education-type p:first-child {
+    margin-top: 0 !important;
+    font-weight: 400 !important;
+}
+
+.entry .education-type ul {
+    /*color: #aaa !important;*/
+    color: var(--cv-main-font-color) !important;
+    padding-left: 0 !important;
+    list-style-type: none !important;
+}
+.education-type ul li:before {
+    content: "–" !important;
+    margin-right: .5em !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Expériences professionnelles */
+
+.experience-card__title {
+    /*font-weight: 700 !important;*/
+    /*font-size: 34px !important;*/
+    /*color: var(--cv-main-color-one) !important;*/
+}
+
+/* Timeline */
+
+.timeline-experience {
+    width: 100% !important;
+    max-width: 900px !important;
+    /*background: #fff !important;*/
+    padding:  50px 50px 20px 50px !important;
+    position: relative !important;
+    /*box-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2) !important;*/
+}
+.timeline-experience:before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0px !important;
+    left:calc(33% + 15px) !important;
+    bottom: 0px !important;
+    width: 4px !important;
+    background: var(--cv-main-color-two) !important;
+    /*background: #ddd !important;*/
+}
+.timeline-experience:after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+.entry {
+    clear: both !important;
+    text-align: left !important;
+    position: relative !important;
+}
+.entry .title {
+    margin-bottom: .5em !important;
+    float: left !important;
+    width: 33% !important;
+    padding-right: 30px !important;
+    text-align: right !important;
+    position: relative !important;
+}
+/*Mini cercles de la timeline*/
+.entry .title:before {
+    content: '' !important;
+    position: absolute !important;
+    width: 16px !important;
+    height: 16px !important;
+    border: 4px solid var(--cv-main-color-one) !important;
+    background-color: #fff !important;
+    border-radius: 100% !important;
+    top: 15% !important;
+    right: -8px !important;
+    z-index: 99 !important;
+}
+.entry .title h5 {
+    margin: 0 !important;
+    font-size: 18px !important;
+}
+.entry .title p {
+    margin: 0 !important;
+    font-size: 100% !important;
+}
+
+.entry .experience-type {
+    margin: 0 0 3em !important;
+    float: right !important;
+    width: 66% !important;
+    padding-left: 30px !important;
+    font-size: 18px !important;
+}
+.entry .experience-type p {
+    line-height: 1.4em !important;
+    color: var(--cv-main-color-one);
+}
+.entry .experience-type p:first-child {
+    margin-top: 0 !important;
+    font-weight: 500 !important;
+}
+
+.entry .experience-type ul {
+    /*color: #aaa !important;*/
+    color: var(--cv-main-font-color) !important;
+    padding-left: 0 !important;
+    list-style-type: none !important;
+}
+.experience-type ul li:before {
+    /*content: "–" !important;*/
+    margin-right: .5em !important;
+}
+
+.educationExperience_mobileView {
+    display: none !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Gestion du responsive */
+
+/* Tablette */
+@media only screen and (max-width: 992px) {
+
+    /* Titre du CV */
+    .resume-title {
+        font-size: 50px !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* Largeur des cards */
+    .resume-card, .skills-card, .diverse-card, .content-card {
+        margin: auto -15px !important;
+    }
+
+    /* Bouton de téléchargement du CV */
+    .btn-resume-button {
+        background: linear-gradient(130deg, var(--cv-main-color-one), var(--cv-main-color-two)) !important;
+        border: var(--cv-white-color) 2px solid !important;
+    }
+    .btn-resume-button a {
+        color: var(--cv-white-color) !important;
+        text-decoration: none !important;
+    }
+
+    /* Disposition des compétences dans la vue */
+    .skills-list {
+        /*display: -ms-flexbox;*/
+        display: flex !important;
+        /*-ms-flex-wrap: wrap;*/
+        flex-wrap: wrap !important;
+        margin-right: -15px !important;
+        margin-left: -15px !important;
+    }
+    .skill-group {
+        display: inline-block !important;
+        margin:0 auto !important;
+    }
+
+    /* Disposition des divers dans la vue */
+    .diverse-list {
+        /*display: -ms-flexbox;*/
+        display: flex !important;
+        /*-ms-flex-wrap: wrap;*/
+        flex-wrap: wrap !important;
+        margin-right: -15px !important;
+        margin-left: -15px !important;
+    }
+    .diverse-group {
+        display: inline-block !important;
+        margin:0 auto !important;
+    }
+
+    /* Timeline Formation et Expérience */
+    .education-card__title, .experience-card__title {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+    .educationExperience_mobileView {
+        display: none !important;
+    }
+
+}
+
+/* Smartphone */
+@media only screen and (max-width: 570px) {
+    /* Timeline Formation */
+    .timeline-education, .timeline-experience {
+        display: none; !important;
+    }
+    .educationExperience_desktopView {
+        display: none !important;
+    }
+    .educationExperience_mobileView {
+        display: block !important;
+    }
+
+    /* Disposition des compétences dans la vue */
+    .skills-list {
+        display: initial !important;
+    }
+    .skill-group {
+        display: initial !important;
+    }
+
+    /* Disposition des divers dans la vue */
+    .diverse-list {
+        display: initial !important;
+    }
+    .diverse-group {
+        display: initial !important;
+    }
+}

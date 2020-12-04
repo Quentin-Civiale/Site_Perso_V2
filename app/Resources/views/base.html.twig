@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="title" content="Quentin Civiale" />
+        <meta name="description" content="Site personnel - Étudiant en Développement Web" />
+        <meta name="author" content="Quentin Civiale" />
+        <meta name="country" content="France" />
+        <meta name="theme-color" content="#394c40" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <title>{% block title %} {% endblock %} | quentin-civiale.fr</title>
+        <meta name="google" content="nositelinkssearchbox" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/Favicon_QC2.png') }}" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=0">
+
+        <!-- Meta pour twitter et facebook - obtention de plus de données lors des partages d'articles du blog -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@quentin_civiale" />
+        <meta name="twitter:author" content="@quentin_civiale" />
+        <meta name="twitter:title" content="Quentin Civiale - Accueil" />
+        <meta name="twitter:description" content="Site personnel - Étudiant en Développement Web" />
+        <meta name="twitter:image" content="{{ asset('images/quentin-civiale_Home.png') }}" />
+
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Quentin Civiale - Accueil" />
+        <meta property="og:description" content="Site personnel - Étudiant en Développement Web" />
+        <meta property="og:url" content="http://www.quentin-civiale.fr/" />
+        <meta property="og:site_name" content="Quentin Civiale - Site Personnel - quentin-civiale.fr" />
+        <meta property="og:image" content="{{ asset('images/quentin-civiale_Home.png') }}" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="{{asset('bootstrap-datepicker_1.9.0/css/bootstrap-datepicker.min.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link type="text/css" rel="stylesheet" href="{{ asset('css/resume.css') }}" />
+
+        <!-- Encart avec la photo apparaissant sur une recherche google -->
+{#        <link href="" rel="publisher" />#}
+
+{#        <meta property="og:type" content="article" />#}
+{#        <meta property="og:article:published_time" content="2020-06-12UTC05:00:00" />#}
+{#        <meta property="og:article:author" content="Quentin Civiale" />#}
+{#        <meta property="og:article:section" content="Article web" />#}
+{#        <meta property="og:article:tag" content="Symfony" />#}
+{#        <meta property="og:article:tag" content="Découverte" />#}
+{#        <meta property="og:article:tag" content="Développement web" />#}
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg sticky-top navbar-website navbar-dark">
+{#            <a class="navbar-brand" href="{{ path('general_homepage') }}">QuentinCiviale</a>#}
+            <a href="{{ path('general_homepage') }}" class="home_logo" onclick="analyticsHome('callHomeView_byLogo')">
+                <img src="{{ asset('images/Logo_Quentin_3.png') }}" class="websiteLogo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav" id="submenu">
+                    <li {% if 'general_homepage' in app.request.attributes.get('_route') %} class="active nav-item" {% elseif 'root_homepage' in app.request.attributes.get('_route') %} class="active nav-item" {% endif %} class="nav-item">
+                        <a class="nav-link" href="{{ url('general_homepage') }}" onclick="analyticsTopBar('home')">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li {% if 'resume' in app.request.attributes.get('_route') %} class="active nav-item"{% endif %} class="nav-item">
+                        <a class="nav-link" href="{{ url('resume') }}" onclick="analyticsTopBar('cv')">Mon parcours </a>
+                    </li>
+                    <li {% if 'blog' in app.request.attributes.get('_route') %} class="active nav-item" {% elseif 'articleDetail' in app.request.attributes.get('_route') %} class="active nav-item" {% elseif 'articlesDetail' in app.request.attributes.get('_route') %} class="active nav-item" {% endif %} class="nav-item">
+                        <a class="nav-link" href="{{ url('blog') }}" onclick="analyticsTopBar('blog')">Blog - Développement Web</a>
+                    </li>
+                </ul>
+            </div>
+
+            <span class="contact-nav" data-toggle="modal" data-target="#ModalContactFormView" title="Me contacter" onclick="analyticsContactForm('callContactForm_byNavbar')">
+              <i class="fas fa-envelope fa-lg white-text fa-2x"></i>
+            </span>
+        </nav>
+
+        {% include '@General/Default/contactForm.html.twig' %}
+
+        <div class="wrapper">
+
+            <div class="col-lg-6 offset-lg-3">
+                {% for message in app.flashes('contactFormSuccess') %}
+                    <div class="alert alert-success" style="margin-bottom: 120px !important; margin-top: -60px !important;">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {% if not form.vars.valid %}
+                    <div class="alert alert-danger" style="margin-bottom: 120px !important; margin-top: -60px !important;">
+                        Erreur: certains champs ne sont pas valides !
+                    </div>
+                {% endif %}
+            </div>
+
+            {% block home %} {% endblock %}
+            {% block contactForm %} {% endblock %}
+            {% block blog %} {% endblock %}
+            {% block articleDetail %} {% endblock %}
+            {% block articlesDetail %} {% endblock %}
+            {% block resume %} {% endblock %}
+            {% block legalNotice %} {% endblock %}
+            {% block error %} {% endblock %}
+
+        </div>
+
+    <footer>
+        <div class="footer">
+            <div class="card-body">
+
+                <div class="social-media-list">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 py-5">
+                            <div class="">
+                                <a class="social-link" href="{{ path('general_homepage') }}" title="Accueil" onclick="analyticsHome('callHomeView_byFooter')">
+                                    <i class="fas fa-home social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                                <a class="social-link" href="https://www.linkedin.com/in/quentin-civiale/" title="Mon LinkedIn" target="_blank" onclick="analyticsSocialMediaBtn('onLinkedinBtn_byFooter')">
+                                    <i class="fab fa-linkedin-in social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                                <a class="social-link" href="https://github.com/Quentin-Civiale" title="Mon GitHub" target="_blank" onclick="analyticsSocialMediaBtn('onGithubBtn_byFooter')">
+                                    <i class="fab fa-github social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                                <a class="social-link" href="https://codepen.io/quentin-civiale/" title="Mon Codepen" target="_blank" onclick="analyticsSocialMediaBtn('onCodepenBtn_byFooter')">
+                                    <i class="fab fa-codepen social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                                <a class="social-link" id="contact_btn_footer" data-toggle="modal" data-target="#ModalContactFormView" title="Me contacter" onclick="analyticsContactForm('callContactForm_byFooter')">
+                                    <i class="fas fa-envelope social_icon fa-lg white-text fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row second-social-line">
+                        <div class="col-sm-12 col-md-12 py-5">
+                            <div class="">
+                                <a class="social-link" href="{{ path('resume') }}" title="Mon CV" onclick="analyticsResume('callCvView_byFooter')">
+                                    <i class="fas fa-file-alt social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                                <a class="social-link" href="{{ path('blog') }}" title="Mon blog" onclick="analyticsBlog('callBlogView_byFooter')">
+                                    <i class="fas fa-blog social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                                <a class="social-link" href="https://www.instagram.com/quentin.cvl.fr/?hl=fr" title="Instagram" target="_blank" onclick="analyticsSocialMediaBtn('onInstagramBtn_byFooter')">
+                                    <i class="fab fa-instagram social_icon fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <div class="row center">
+                        <a href="{{ path('legalNotice') }}" class="legalNotice-link">Mentions légales</a>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <div class="footer_info">&copy; <span id="year"></span> quentin-civiale.fr - Tous droits réservés • Design et développement par
+                        <a href="http://quentin-civiale.fr/" class="copyright" title="Quentin Civiale - Étudiant Développeur Web" target="_blank" rel="author">Quentin Civiale</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("year").innerHTML = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA_opwyjnEvyjuAKHWMymxC4Gl1l9_CUvo",
+            authDomain: "qntn-cvl-website.firebaseapp.com",
+            databaseURL: "https://qntn-cvl-website.firebaseio.com",
+            projectId: "qntn-cvl-website",
+            storageBucket: "qntn-cvl-website.appspot.com",
+            messagingSenderId: "275959286946",
+            appId: "1:275959286946:web:c634e2ef40c0fb11e3dbfb",
+            measurementId: "G-YTT335Y8KQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{asset('bootstrap-datepicker_1.9.0/js/bootstrap-datepicker.min.js')}}"></script>
+    <!-- Btn de retour vers le haut -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/currentTime.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/backToTop.js') }}"></script>
+    <!-- Gestion affichage du texte tronqué des projets -->
+    <script type="text/javascript" src="{{ asset('js/hideShowTxt.js') }}"></script>
+    <!-- Gestion des boutons de partage -->
+    <script type="text/javascript" src="{{ asset('js/socialShare.js') }}"></script>
+    <!-- Analytics Firebase -->
+    <script type="text/javascript" src="{{ asset('js/gtag.js') }}"></script>
+    </body>
+</html>

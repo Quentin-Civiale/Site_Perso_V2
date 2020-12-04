@@ -1,0 +1,31 @@
+root_homepage:
+    path:     /
+    defaults: { _controller: GeneralBundle:Navigation:home }
+
+general_homepage:
+    path:     /accueil
+    defaults: { _controller: GeneralBundle:Navigation:home }
+
+#contact:
+#  path:     /quentin-civiale/contact
+#  defaults: { _controller: GeneralBundle:Navigation:contact }
+
+resume:
+  path:     /curriculum-vitae
+  defaults: { _controller: GeneralBundle:Navigation:resume }
+
+blog:
+    path:     /blog
+    defaults: { _controller: GeneralBundle:Navigation:blog }
+
+articleDetail:
+  path:     /blog/article/symfony
+  defaults: { _controller: GeneralBundle:Blog:articleDetail }
+
+articlesDetail:
+  path:     /blog/article/wordpress
+  defaults: { _controller: GeneralBundle:Blog:articlesDetail }
+
+legalNotice:
+    path:     /mentions-legales
+    defaults: { _controller: GeneralBundle:Navigation:legalNotice }

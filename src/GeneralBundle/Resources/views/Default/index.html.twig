@@ -1,0 +1,494 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block home %}
+
+    <div class="col-sm-8 offset-sm-2 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+
+        <div class="card profile-card">
+            <div class="card-body">
+                <div class="profile-card__img">
+                    <img class="img-profile-card" src="{{ asset('images/Image 2.jpg') }}" alt="profile card">
+                </div>
+                <div class="profile-card__cnt">
+                    <p class="card-title profile-card__name">Quentin Civiale</p>
+                    <p class="card-subtitle profile-card__age" id="years_old"> </p>
+{#                    <p class="card-subtitle profile-card__phone-number">06 77 14 32 77</p>#}
+                    <p class="card-subtitle profile-card__txt">Chef de Projet Digital à
+                        <a href="https://openclassrooms.com/fr/" target="_blank">OpenClassrooms</a>
+                    </p>
+                    <div class="profile-card-loc">
+                        <span class="profile-card-loc__icon">
+                            <i class="fas fa-map-marker-alt icon"></i>
+                        </span>
+                        <span class="profile-card-loc__txt">
+                            Clermont-Ferrand, France
+                        </span>
+                    </div>
+                </div>
+
+                <script>
+                    // var current_year = new Date().getUTCFullYear();
+                    // var birthdate = new Date("05/20/1991").getFullYear();
+                    // var age = (current_year - birthdate);
+
+                    function getAge(date) {
+                        var diff = Date. now() - date. getTime();
+                        var years_old = new Date(diff);
+                        return Math. abs(years_old. getUTCFullYear() - 1970);
+                    }
+                    var age_year = getAge(new Date(1991, 5, 20)); //Date(année, mois, jour)
+                    // document.write("Vous avez " + age_year + " ans");
+                    document.getElementById("years_old").innerHTML = age_year + " ans";
+                </script>
+
+                <div class="profile-card-inf">
+                    <div class="profile-card-inf__item">
+                        <div class="profile-card-inf__title">6</div>
+                        <div class="profile-card-inf__txt">Projets réalisés</div>
+                    </div>
+
+                    <div class="profile-card-inf__item">
+                        <div class="profile-card-inf__title">1</div>
+                        <div class="profile-card-inf__txt">Projet(s) en cours</div>
+                    </div>
+
+                    <div class="profile-card-inf__item">
+                        <div class="profile-card-inf__title">2</div>
+                        <div class="profile-card-inf__txt">Sites en ligne réalisés</div>
+                    </div>
+
+                    <div class="profile-card-inf__item">
+                        <div class="profile-card-inf__title">6</div>
+                        <div class="profile-card-inf__txt">Langages appris</div>
+                    </div>
+
+                    <div class="profile-card-inf__item">
+                        <div class="profile-card-inf__title">3</div>
+                        <div class="profile-card-inf__txt">Frameworks appris</div>
+                    </div>
+                </div>
+
+                <div class="profile-card-social">
+                    <a href="https://www.linkedin.com/in/quentin-civiale/" class="profile-card-social__item linkedin" target="_blank" onclick="analyticsSocialMediaBtn('onLinkedinBtn_byProfileCard')">
+                        <span class="icon-font">
+                            <i class="fab fa-linkedin-in icon"></i>
+                        </span>
+                    </a>
+                    <a href="https://github.com/Quentin-Civiale" class="profile-card-social__item github" target="_blank" onclick="analyticsSocialMediaBtn('onGithubBtn_byProfileCard')">
+                        <span class="icon-font">
+                          <i class="fab fa-github icon"></i>
+                        </span>
+                    </a>
+                    <a href="https://codepen.io/quentin-civiale/" class="profile-card-social__item codepen" target="_blank" onclick="analyticsSocialMediaBtn('onCodepenBtn_byProfileCard')">
+                        <span class="icon-font">
+                          <i class="fab fa-codepen icon"></i>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="row profile-btn">
+                    <button class="btn btn-cv btn-lg" onclick="analyticsResume('callCvView_byProfileCard')">
+                        <a href="{{ path('resume') }}"><i class="fas fa-file-alt"></i> Mon CV</a>
+                    </button>
+                    <button class="btn btn-contact btn-lg" data-toggle="modal" data-target="#ModalContactFormView" title="Me contacter" onclick="analyticsContactForm('callContactForm_byProfileCard')">
+                        <i class="fas fa-envelope"></i> Contactez-moi
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="buttonUp">
+        <a href="#top" id="btn-to-top" title="Retour vers le haut"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card description-card">
+            <div class="card-body">
+                <div class="description-card__cnt">
+                    <h1 class="card-title description-card__name">À propos de moi</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2 class="card-subtitle description-card__txt">
+                        Comment j'en suis arrivé au développement web ?
+                    </h2>
+                    <br/>
+                    <div class="justify">
+                        {% include '@General/Default/aboutMe.html.twig' %}
+                    </div>
+                </div>
+
+                <br/>
+
+            </div>
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card blog-card">
+            <div class="card-body">
+                <div class="blog-card__cnt">
+                    <h1 class="card-title blog-card__name">Blog</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+
+                    <p class="blog-intro">
+                        Que vous soyez débutant ou expert, venez trouver quelques petits conseils, tutos et
+                        expériences vécues à travers ma formation. Bien sûr, sans avoir la prétention de tout
+                        connaître ou de tout savoir, loin de là <i class="fas fa-grin-beam-sweat"></i> ... et
+                        heureusement.
+                    </p>
+
+                    <p class="blog-intro">
+                        Si ça peut vous aider, tant mieux ! Sinon, partagez et aidez les autres !
+                    </p>
+
+                    <div class="offset-lg-9 offset-md-9">
+                        <a href="{{ path('blog') }}" class="blog-link-card" onclick="analyticsBlog('callBlogView_byBlogCard')"> C'est par ici ! <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card project-card">
+
+            <div class="card-body">
+                <div class="project-card__cnt">
+                    <h1 class="card-title project-card__name">Mes Projets</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2 class="card-subtitle project-card__txt">Projets réalisés&ast; dans le cadre de la formation
+                        <span class="italic">Chef de projet Digital&ast;&ast;</span>
+                    </h2>
+                    <h3 class="card-subtitle project-card__subtxt">
+                        &ast;Tous les sites créés durant la formation sont purement fictifs et n'ont aucun lien avec de possibles sites existants.<br/>
+                        &ast;&ast;Anciennement nommée "Chef de Projet Multimédia - Développement Web"
+                    </h3>
+                </div>
+
+                <br/>
+
+                <div class="card-deck">
+                    <div class="card project-card__card">
+                        <img class="card-img-top" src="{{  asset('images/P1-mairieSFL.PNG') }}" alt="Card image cap">
+                        <div class="card-body project_card__body">
+                            <span class="hidden">Projet 1</span>
+                            <h4 class="card-title project-card__title">Créer et déployer un site en ligne</h4>
+                            <p class="card-text justify hidden_sm">
+                                Vous devez créer un site web pour promouvoir les activités culturelles de votre ville ou village, à la demande de la mairie.
+                                On vous demande de créer un site qui respecte visuellement l’identité de la ville avec un certain nombre de fonctionnalités.
+                                La ville souhaite être en mesure de mettre à jour le contenu de son site sans avoir à faire appel à un prestataire dans le futur.
+                            </p>
+                        </div>
+                        <div class="card-footer project-card__footer">
+                            <a href="https://sfl.quentin-civiale.fr/" class="project-link" target="_blank">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="card project-card__card">
+                        <img class="card-img-top" src="{{  asset('images/P2-salonduchocolat.png') }}" alt="Card image cap">
+                        <div class="card-body project_card__body">
+                            <span class="hidden">Projet 2</span>
+                            <h4 class="card-title project-card__title">Initier et lancer un projet multimédia</h4>
+                            <p class="card-text justify hidden_sm">
+                                Vous êtes développeur junior dans une agence web depuis 2 ans.
+                                Vous souhaitez maintenant monter en compétence sur la gestion de projet.
+                                Suite à votre formation, le directeur commercial de votre agence vous a chargé de répondre à votre premier appel d’offres.
+                                L'organisateur du salon du chocolat, souhaite faire développer un site web pour communiquer sur son évènement.
+                            </p>
+                        </div>
+                        <div class="card-footer project-card__footer">
+                            <a href="https://salon-chocolat.quentin-civiale.fr/" class="project-link" target="_blank">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="card project-card__card">
+                        <img class="card-img-top" src="{{ asset('images/P3-jeanforteroche.jpg') }}" alt="Card image cap">
+                        <div class="card-body project_card__body">
+                            <span class="hidden">Projet 3</span>
+                            <h4 class="card-title project-card__title">Créer un blog pour un écrivain</h4>
+                            <p class="card-text justify hidden_sm">
+                                Vous venez de décrocher un contrat avec Jean Forteroche, acteur et écrivain.
+                                Il travaille actuellement sur son prochain roman, "Billet simple pour l'Alaska".
+                                Il souhaite innover et le publier par épisode en ligne sur son propre site.
+                                Seul problème : Jean n'aime pas WordPress et souhaite avoir son propre outil de blog,
+                                offrant des fonctionnalités plus simples. Vous allez donc devoir
+                                <span class="hideShow">
+                                    développer un moteur de blog en PHP et MySQL.
+                                    Le livre de Jean Forteroche reste à écrire... mais il sera publié en ligne !
+                               </span>
+                            </p>
+                        </div>
+                        <div class="card-footer project-card__footer">
+                            <a href="https://blog-jf.quentin-civiale.fr/" class="project-link" target="_blank">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+                <div class="card-deck">
+                    <div class="card project-card__card">
+                        <img class="card-img-top" src="{{ asset('images/P4-lelouvre.png') }}" alt="Card image cap">
+                        <div class="card-body project_card__body">
+                            <span class="hidden">Projet 4</span>
+                            <h4 class="card-title project-card__title">Développer un back-end pour un client</h4>
+                            <p class="card-text justify hidden_sm">
+                                Le musée du Louvre vous a missionné pour un projet ambitieux : créer un nouveau système
+                                de réservation et de gestion des tickets en ligne pour diminuer les longues files d’attente
+                                et tirer parti de l’usage croissant des smartphones.
+                                L’interface doit être accessible aussi bien sur ordinateur de bureau que tablettes et
+                                smartphones, et utiliser pour cela un design responsive. L’interface doit être fonctionnelle,
+                                claire et rapide avant tout.
+                                L’objectif est de permettre aux visiteurs d’acheter un billet rapidement.
+                            </p>
+                        </div>
+                        <div class="card-footer project-card__footer">
+                            <a href="https://le-louvre.quentin-civiale.fr/" class="project-link" target="_blank">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="card project-card__card">
+                        <img class="card-img-top" src="{{ asset('images/P6-myseason.png') }}" alt="Card image cap">
+                        <div class="card-body project_card__body">
+                            <span class="hidden">Projet 6</span>
+                            <h4 class="card-title project-card__title">Contribuez à votre écosystème</h4>
+                            <p class="card-text justify hidden_sm">
+                                Où que vous viviez, quelles que soient vos passions et vos connaissances, il y a forcément
+                                quelque chose que vous aimeriez améliorer autour de vous.
+                                Le but de ce projet, bien réel et concret, est de renvoyer l’ascenseur à la communauté
+                                autour de vous en réalisant un projet qui a un véritable impact social.
+                                <br/>
+                                Gérez un projet numérique Menez un projet numérique de la forme qui vous semblera la plus
+                                adaptée (réalisez un site wordpress ;
+                                <span class="hideShow">
+                                    codez un site web, ou application mobile…) pour répondre à un besoin autour de vous.
+                                    Il peut s’agir d’un site web pour l’association de théâtre de votre ville, d’une
+                                    application pour localiser et référencer les objets trouvés pendant un festival, etc.
+                                    Prenez le temps de choisir un sujet qui vous touche et pour lequel vous ressentez un
+                                    véritable besoin.
+                                    Si vous n’avez pas d’idée, choisissez une association ou une organisation qui vous tient
+                                    à coeur. Vous pouvez entre autres par exemple faire le site internet de l’association
+                                    d’escalade de votre ville, ou celui d’un établissement que vous avez fréquenté, etc…
+                                </span>
+                            </p>
+                        </div>
+                        <div class="card-footer project-card__footer">
+                            <a href="https://my-season.quentin-civiale.fr/" class="project-link" target="_blank">Projet en cours</a>
+                        </div>
+                    </div>
+                    <div class="card project-card__card">
+                        <img class="card-img-top" src="{{ asset('images/quentin-civiale_Home.png') }}" alt="Card image cap">
+                        <div class="card-body project_card__body">
+                            <span class="hidden">Projet 4.2</span>
+                            <h4 class="card-title project-card__title">Développez votre présence en ligne</h4>
+                            <p class="card-text justify hidden_sm">
+                                Votre directeur d’agence vous convoque avec vos collègues et vous fait remarquer que
+                                certains profils d’employés de l’agence ne semblent pas avoir été mis à jour récemment...
+                                Certains ne sont pas rattachés à l’agence sur leur profil LinkedIn, pire, d’autres n’ont
+                                même pas de profil LinkedIn !
+                                Il vous explique que la visibilité en ligne de l’agence est un enjeu-clé pour trouver de
+                                nouveaux clients, les rassurer du sérieux des employés et
+                                <span class="hideShow">
+                                    aussi pour donner envie à de futurs collaborateurs de venir travailler pour l’agence.
+                                    Il demande à chacun de faire un effort pour soigner sa réputation en ligne.
+                                    <br/>
+                                    Il vous indique que l’agence compte faire sa part, et qu’un photographe va passer dans
+                                    les locaux la semaine prochaine pour prendre une photo professionnelle de chacun des
+                                    employés. Celle-ci servira à enrichir la page “Qui sommes-nous ?” de l’agence. Vous et
+                                    vos collègues serez aussi invités à vous resservir de cette photo pour vos profils personnels.
+                                    À la fin de la réunion, il vous retient et vous demande de vous investir particulièrement
+                                    sur ce projet. Il aimerait que vous montriez l’exemple. Vous acceptez rapidement.
+                                    <br/>
+                                    En effet, ayant récemment pris pour bonne résolution de créer un mini-site présentant
+                                    votre portfolio et vos compétences développées récemment, ce projet correspond à vos
+                                    objectifs personnels. Vous vous proposez non seulement pour réaliser un site, mais aussi
+                                    pour le montrer à vos collègues dans le mois à venir sur une pause déjeuner.
+                                    <br/>
+                                    Ça sera l’occasion parfaite pour vous faire monter en compétences sur le marketing digital
+                                    en vous entraînant sur un produit que vous connaissez déjà très bien… vous !
+                                    Vous décidez de procéder méthodiquement pour réaliser un projet digne de ce nom (votre nom).
+                                </span>
+                            </p>
+                        </div>
+                        <div class="card-footer project-card__footer">
+                            <a href="{{ path('general_homepage') }}" class="project-link" target="_blank">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card skills-card">
+
+            <div class="card-body">
+                <div class="skills-card__cnt">
+                    <h1 class="card-title skills-card__name">Compétences</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2 class="card-subtitle skills-card__txt">Compétences acquises lors de la formation
+                        <span class="italic">"Chef de Projet Digital"</span>
+                    </h2>
+                    <h3 class="card-subtitle skills-card__subtxt">
+
+                    </h3>
+                </div>
+
+                <br/>
+
+                <div class="col-lg-10 offset-lg-1">
+
+                    <div class="skill_category_title">Frontend</div>
+                    <div class="row skill-content">
+                        <div class="front">
+                            <img class="webLogo" src="{{ asset('images/logo_html5.png') }}">
+                            <div class="skill-type">HTML 5</div>
+                        </div>
+                        <div class="front">
+                            <img class="webLogoCss" src="{{ asset('images/logo_css3.png') }}">
+                            <div class="skill-type">CSS 3</div>
+                        </div>
+                        <div class="front">
+                            <img class="webLogoJS" src="{{ asset('images/logo_javascript5.png') }}">
+                            <div class="skill-type">Javascript</div>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <div class="skill_category_title">Backend</div>
+                    <div class="row skill-content">
+                        <div class="back">
+                            <img class="webLogoPhp" src="{{ asset('images/logo_php.png') }}">
+                            <div class="skill-type">PHP</div>
+                        </div>
+                        <div class="back">
+                            <img class="webLogoMysql" src="{{ asset('images/logo_mysql.png') }}">
+                            <div class="skill-type">MySQL</div>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <div class="skill_category_title">Framework</div>
+                    <div class="row skill-content">
+                        <div class="frmwrk">
+                            <img class="webLogo" src="{{ asset('images/logo_bootstrap.png') }}">
+                            <div class="skill-type">Bootstrap</div>
+                        </div>
+                        <div class="frmwrk">
+                            <img class="webLogo" src="{{ asset('images/logo_materialize.png') }}">
+                            <div class="skill-type">Materialize</div>
+                        </div>
+                        <div class="frmwrk">
+                            <img class="webLogo" src="{{ asset('images/logo_symfony.png') }}">
+                            <div class="skill-type">Symfony</div>
+                        </div>
+                        <div class="frmwrk">
+                            <img class="webLogo" src="{{ asset('images/logo_jquery.png') }}">
+                            <div class="skill-type">jQuery</div>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                    <div class="skill_category_title">CMS</div>
+                    <div class="row skill-content">
+                        <div class="cms">
+                            <img class="webLogo" src="{{ asset('images/logo_wordpress.png') }}">
+                            <div class="skill-type">WordPress</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card created-website-card">
+            <div class="card-body">
+                <div class="created-website-card__cnt">
+                    <h1 class="card-title created-website-card__name">Réalisations</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2 class="card-subtitle created-website-card__txt">
+                        Listes des sites en ligne réalisés
+                    </h2>
+                </div>
+
+                <br/>
+
+                <div class="card-deck">
+                    <div class="card created-website-card__card">
+                        <img class="card-img-top" src="{{ asset('images/quentin-civiale_Home.png') }}" alt="Card image cap">
+                        <div class="card-body created-website_card__body">
+                            <h4 class="card-title created-website-card__title">Quentin Civiale [v2]</h4>
+                            <p class="card-text justify">
+                                Site personnel afin de présenter mes connaissances et compétences acquises lors de ma formation,
+                                il est réalisé avec symfony, bootstrap, php, jquery, javascript.
+                            </p>
+                        </div>
+                        <div class="card-footer created-website-card__footer">
+                            <a href="http://quentin-civiale.fr/" class="project-link" target="_blank">Lien vers le site</a>
+                        </div>
+                    </div>
+                    <div class="card created-website-card__card">
+                        <img class="card-img-top" src="{{ asset('images/institut-valerie_Home.PNG') }}" alt="Card image cap">
+                        <div class="card-body created-website_card__body">
+                            <h4 class="card-title created-website-card__title">Institut Valérie (2019)</h4>
+                            <p class="card-text justify">
+                                Site réalisé pour un institut de beauté avec wordpress et ajout de différents plugins spécialisés sur
+                                la sécurité, le référencement web, les tableaux, l'intégration d'une map.
+                            </p>
+                        </div>
+                        <div class="card-footer created-website-card__footer">
+                            <a href="https://institut-valerie.fr/" class="project-link" target="_blank">Lien vers le site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

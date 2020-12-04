@@ -1,0 +1,1412 @@
+.color {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+
+    /*PANTONE - Color of the Year*/
+    --2017: #86af49;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Généralités */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--main-font-color);
+}
+
+/* Variable CSS des couleurs */
+/*:root {*/
+/*    --main-color-one: #dc3545 !important;*/
+/*    --main-color-two: #ffc107 !important;*/
+/*    --main-font-color: #324e63 !important;*/
+/*    --white-color: #ffffff !important;*/
+/*}*/
+
+/*:root {*/
+/*    --main-color-one: #324e63 !important;*/
+/*    --main-color-two: #03989e !important;*/
+/*    --main-font-color: #03989e !important;*/
+/*    --white-color: #ffffff !important;*/
+/*}*/
+
+:root {
+    --main-color-one: #394c40 !important;
+    --main-color-two: #CA8445 !important;
+    --main-font-color: #69623B !important;
+    --white-color: #ffffff !important;
+}
+
+/*:root {*/
+/*    --main-color-one: #2E3D34 !important;*/
+/*    --main-color-two: #787A63  !important;*/
+/*    --main-font-color: #69623B!important;*/
+/*    --white-color: #ffffff !important;*/
+/*}*/
+
+/* Fond coloré */
+.wrapper {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 50px 20px !important;
+    padding-top: 150px !important;
+    /*display: flex !important;*/
+    /*background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%) !important;*/
+    /*background-image: linear-gradient(-20deg, var(--main-color-two) 0%, var(--main-color-one) 100%) !important;*/
+    /*background-image: linear-gradient(var(--main-color-one) 0%, var(--main-color-two) 100%) !important;*/
+    background-image: linear-gradient(130deg, var(--main-color-one) 10%, var(--main-color-two) 100%) !important;
+}
+
+/*Gestion des Titres*/
+h1{
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    color: var(--main-color-one) !important;
+}
+h2 {
+    font-size: 25px !important;
+    font-weight: 400 !important;
+    color: var(--main-font-color) !important;
+}
+h3 {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    color: var(--main-font-color) !important;
+}
+h4 {
+    font-size: 20px !important;
+    color: var(--main-color-one) !important;
+}
+
+p {
+    /* de base 16 px*/
+    font-size: 18px !important;
+}
+
+kbd {
+    background-color: var(--main-color-one) !important;
+}
+
+/* Correction du border-radius des mini-cards */
+.card {
+    overflow: hidden !important;
+}
+
+/* Police en italique */
+.italic {
+    font-style: italic !important;
+}
+
+.justify {
+    text-align: justify !important;
+}
+
+.center {
+    /*text-align: center !important;*/
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+
+/* Bouton de retour vers le haut de la page */
+#btn-to-top {
+    background: var(--main-color-one) !important;
+    color: var(--white-color) !important;
+    font-size: 20px;
+    height: 45px;
+    width: 45px;
+    line-height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    text-align: center;
+    z-index: 9999;
+    -moz-transition: background 0.8s ease;
+    -o-transition: background 0.8s ease;
+    -webkit-transition: background 0.8s ease;
+    transition: background-color .4s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    display: inline-block;
+    margin: 30px;
+}
+
+#btn-to-top:hover {
+    background-color: var(--white-color) !important;
+    cursor: pointer !important;
+    color: var(--main-color-one) !important;
+    border: 2px solid var(--main-color-one) !important;
+}
+
+#btn-to-top:active {
+    background-color: #666 !important;
+}
+
+#btn-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la navbar */
+
+/* Navbar */
+.navbar-website {
+    background-color: var(--main-color-one) !important;
+    border-bottom: var(--main-color-two) solid 1px !important;
+    box-shadow: 0 3px 2px 0 rgba(0,0,0,0.25) !important;
+}
+
+/* Logo enveloppe pour le contact */
+.contact-nav {
+    color: var(--white-color) !important;
+    cursor: pointer !important;
+    margin-right: 15px !important;
+}
+.contact-nav:hover {
+    color: var(--main-color-two) !important;
+    size: 18px !important;
+    transform: scale(1.25) !important;
+    transition: background-color .5s, transform .5s ease-out !important;
+}
+
+/* Logo du site */
+.websiteLogo {
+    /*height: 150px !important;*/
+    width: 150px !important;
+    object-fit: contain !important;
+}
+
+/* Boutons de navigation du menu */
+.nav-item {
+    margin: auto 10px !important;
+}
+.navbar-dark .navbar-nav .active > .nav-link {
+    color: var(--main-color-two);
+    background-color: #fff;
+    border-radius: 30px !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--main-color-two);
+    background-color: #fff;
+    border-radius: 30px !important;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card du profil */
+
+/* Design de la card */
+.profile-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+    overflow: initial !important;
+}
+
+/* Format du cercle pour l'image */
+.profile-card__img {
+    width: 200px !important;
+    height: 200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateY(-50%) !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 4 !important;
+    box-shadow: 0px 5px 50px 0px var(--main-color-one), 0px 0px 0px 7px var(--main-color-two) !important;
+}
+
+/* Format de l'image de profil */
+.img-profile-card {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+/* Intérieur de la card */
+.profile-card__cnt {
+    margin-top: -65px !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 20px !important;
+    transition: all .3s !important;
+}
+
+/* Infos du profil */
+.profile-card__name {
+    font-weight: 500 !important;
+    font-size: 38px !important;
+    color: var(--main-color-one) !important;
+    margin-bottom: 15px !important;
+}
+.profile-card__age {
+    font-size: 24px !important;
+    /*font-weight: bold !important;*/
+    color: var(--main-font-color) !important;
+    margin-bottom: 15px !important;
+}
+.profile-card__phone-number {
+    font-size: 24px !important;
+    /*font-weight: bold !important;*/
+    color: var(--main-font-color) !important;
+    margin-bottom: 15px !important;
+}
+.profile-card__txt {
+    font-size: 24px !important;
+    /*font-weight: 500 !important;*/
+    color: var(--main-font-color) !important;
+    margin-bottom: 15px !important;
+}
+.profile-card__txt a {
+    color: var(--main-font-color) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+.profile-card__txt a:hover {
+    color: var(--main-color-two) !important;
+    text-decoration: none !important;
+}
+/*.profile-card__txt strong {*/
+/*    font-weight: 700 !important;*/
+/*}*/
+
+/* Lieu */
+.profile-card-loc {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+}
+.profile-card-loc__icon {
+    display: inline-flex !important;
+    font-size: 27px !important;
+    margin-right: 10px !important;
+    /*color: #6944ff !important;*/
+}
+
+/* Résumé en chiffres */
+.profile-card-inf {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    /*margin-top: 15px !important;*/
+    padding: 0 5px !important;
+    margin: 0 -50px !important;
+}
+.profile-card-inf__item {
+    padding: 10px 35px !important;
+    min-width: 150px !important;
+}
+.profile-card-inf__title {
+    font-weight: 700 !important;
+    text-align: center !important;
+    font-size: 27px !important;
+    /*color: #6944ff;*/
+    color: var(--main-color-one) !important;
+}
+.profile-card-inf__txt {
+    font-size: 16px !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    margin-top: 7px !important;
+    color: var(--main-font-color) !important;
+}
+
+/* Social link */
+.profile-card-social {
+    margin-top: 25px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+.profile-card-social__item {
+    display: inline-flex !important;
+    width: 55px !important;
+    height: 55px !important;
+    margin: 15px !important;
+    border-radius: 50% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--white-color) !important;
+    background: #405de6 !important;
+    box-shadow: 0px 7px 30px rgba(43,98,169,0.5) !important;
+    position: relative !important;
+    font-size: 21px !important;
+    flex-shrink: 0 !important;
+    transition: all .3s !important;
+}
+.profile-card-social__item:hover {
+    transform: scale(1.2);
+}
+
+.linkedin {
+    background: linear-gradient(45deg, rgb(0,140,201), #0055a9) !important;
+    box-shadow: 0px 4px 30px rgba(43, 98, 169, 0.5) !important;
+}
+.github {
+    background: linear-gradient(45deg, #333333, #626b73) !important;
+    box-shadow: 0px 4px 30px rgba(63, 65, 67, 0.6) !important;
+}
+.codepen {
+    background: linear-gradient(45deg, #324e63, #414447) !important;
+    box-shadow: 0px 4px 30px rgba(55, 75, 90, 0.6) !important;
+}
+
+/* Design des btn CV et contact */
+.profile-btn {
+    margin-top: 25px !important;
+    text-align: center !important;
+    /*width: 100% !important;*/
+    /*padding: 0 350px !important */
+    padding: 0 250px !important;
+}
+
+.btn-cv {
+    display: inline-block !important;
+    margin:0 auto !important;
+    color: var(--white-color);
+    border-radius: 30px !important;
+    background: var(--main-color-one) !important;
+}
+.btn-cv:hover {
+    background: linear-gradient(130deg, var(--main-color-one), var(--main-color-two)) !important;
+    box-shadow: 0px 7px 30px var(--main-font-color) !important;
+}
+.btn-cv a {
+    text-decoration: none !important;
+    color: var(--white-color);
+}
+.btn-contact {
+    display: inline-block !important;
+    margin:0 auto !important;
+    color: var(--white-color);
+    border-radius: 30px !important;
+    background: var(--main-color-one) !important;
+}
+.btn-contact:hover {
+    background: linear-gradient(130deg, var(--main-color-one), var(--main-color-two)) !important;
+    box-shadow: 0px 7px 30px var(--main-font-color) !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card avec le formulaire de contact */
+
+/* Design de la card (ICI MODALE DU FORMULAIRE) */
+.contact-card {
+    /*margin: auto !important;*/
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+}
+
+/* Design de l'input du prénom */
+#contact_firstname, #contact_lastname, #contact_email, #contact_subject {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--main-color-one);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid var(--main-color-two);
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Design de l'input du textarea */
+#contact_message {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--main-color-one);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid var(--main-color-two);
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    min-height: 110px !important;
+}
+
+/* Design de l'input de la checkbox mentions légales */
+/* -> Utilisation de la classe "custom-control-input" dans le ContactType.php */
+
+/* Custom de la checkbox du RGPD */
+.custom-control-label::before,
+.custom-control-label::after {
+    top: .4rem !important;
+    width: 1rem !important;
+    height: 1rem !important;
+}
+.custom-control-label:before{
+    background-color: var(--white-color) !important;
+    border: 2px solid var(--main-color-one) !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color: var(--main-color-one) !important;
+}
+
+/* Design du btn vers les mentions légales */
+.legalNotice-btn {
+    text-decoration: none !important;
+    font-size: 18px !important;
+    color: var(--main-color-two) !important;
+}
+.legalNotice-btn:hover {
+    /*text-decoration: none !important;*/
+    font-size: 18px !important;
+    text-decoration: underline !important;
+}
+
+/* Design du bouton d'envoi du formulaire */
+.btn-submit-form {
+    color: var(--white-color);
+    border-radius: 30px !important;
+    background: var(--main-color-one) !important;
+}
+.btn-submit-form:hover {
+    background: linear-gradient(130deg, var(--main-color-one), var(--main-color-two)) !important;
+    box-shadow: 0px 7px 30px var(--main-font-color) !important;
+}
+
+/* ????? */
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+.truncate {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card de description */
+
+/* Design de la card */
+.description-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+/* Intérieur de la card */
+.description-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 20px !important;
+    transition: all .3s !important;
+}
+.description-card__name {
+    margin-bottom: 15px !important;
+}
+.description-card__txt {
+    margin-bottom: 15px !important;
+}
+/* Liens externes de la description */
+.description-card a {
+    color: var(--main-color-two) !important;
+}
+.description-card a:hover {
+    text-decoration: underline !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card de blog */
+
+/* Design de la card */
+.blog-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    /*background-image: url("../images/email-pattern.png") !important;*/
+    background-attachment: fixed !important;
+    border: var(--white-color) solid 4px !important;
+    /*background-image: linear-gradient(130deg, var(--main-color-one) 10%, var(--main-color-two) 100%) !important;*/
+    background-image: url("../images/tesselation4.3.png") !important;
+    /*cursor: pointer !important;*/
+    /*position: relative !important;*/
+}
+
+/*.blog-card:hover {*/
+/*    box-shadow: 0px 16px 120px -20px black !important;*/
+/*}*/
+
+.blog-card h1 {
+    font-size: 45px !important;
+    color: var(--white-color) !important;
+}
+.blog-link-card {
+    /*text-align: right !important;*/
+    color: var(--white-color) !important;
+    margin-bottom: 15px !important;
+    font-size: 25px !important;
+}
+.blog-link-card:hover {
+    color: var(--main-color-two) !important;
+    text-decoration: underline !important;
+    font-size: 25px !important;
+}
+.blog-intro {
+    font-size: 25px !important;
+    color: var(--white-color) !important;
+}
+
+/* Intérieur de la card */
+.blog-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 20px !important;
+    transition: all .3s !important;
+}
+.blog-card__name {
+    margin-bottom: 15px !important;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* DESIGN DU BLOG + ARTICLES */
+/* Titre de la page du blog */
+
+.blog-page-title {
+    font-size: 72px !important;
+    font-weight: lighter !important;
+    color: var(--cv-white-color) !important;
+    margin-top: -120px !important;
+    margin-bottom: 40px !important;
+    /*-------Texte avec image en fond--------*/
+    background: url("../images/email-pattern.png") no-repeat;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/* Design de la card */
+.blog-page-card {
+    /*margin: auto !important;*/
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+/* Intérieur de la card */
+.blog-page-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 40px !important;
+    transition: all .3s !important;
+}
+.blog-page-card__name {
+    margin-bottom: 15px !important;
+}
+.blog-page-card__txt {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Liens externes */
+.blog-page-card a {
+    color: var(--main-color-two) !important;
+}
+.blog-page-card a:hover {
+    text-decoration: underline !important;
+}
+
+/* Lien vers l'article sélectionné */
+.link_to_article_view {
+    color: var(--main-color-two) !important;
+    margin-bottom: 15px !important;
+    font-size: 20px !important;
+}
+.link_to_article_view:hover {
+    text-decoration: underline !important;
+}
+
+/* MENU */
+
+/* Design du menu d blog*/
+.blog-menu-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+}
+
+.blog-menu-card__title {
+    text-align: center !important;
+    font-size: 25px !important;
+    font-weight: 400 !important;
+}
+.blog-menu-card__title a.articlesType {
+    text-decoration: none !important;
+    color: var(--main-color-two) !important;
+}
+.blog-menu-card__title a.tutosType {
+    text-decoration: none !important;
+    color: var(--main-color-one) !important;
+}
+.blog-menu-card__title a:hover {
+    text-decoration: underline !important;
+}
+
+.blog-menu-card__footer {
+    font-size: 16px !important;
+}
+.articlesFooter {
+    background-color: var(--main-color-two) !important;
+}
+.tutosFooter {
+    background-color: var(--main-color-one) !important;
+}
+
+/* ARTICLES EN LISTE */
+
+/* Design de la card */
+.generalPosts-card {
+    /*margin: auto !important;*/
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+/* Intérieur de la card */
+.generalPosts-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 40px !important;
+    transition: all .3s !important;
+}
+.generalPosts-card__name {
+    margin-bottom: 15px !important;
+}
+
+/* ARTICLE PAGE INDIVIDUELLE */
+
+/* Titre de la page du blog */
+
+.article-page-title {
+    font-size: 72px !important;
+    font-weight: lighter !important;
+    color: var(--cv-white-color) !important;
+    margin-top: -120px !important;
+    margin-bottom: 40px !important;
+    /*-------Texte avec image en fond--------*/
+    background: url("../images/email-pattern.png") no-repeat;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/* Design de la card */
+.article-page-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+/* Intérieur de la card */
+.article-page-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 40px !important;
+    transition: all .3s !important;
+}
+.article-page-card__name {
+    margin-bottom: 15px !important;
+}
+.article-page-card__txt {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Liens externes de la description */
+.article-page-card a {
+    color: var(--main-color-two) !important;
+}
+.article-page-card a:hover {
+    text-decoration: underline !important;
+}
+
+/* Image à l'intérieur d'un article */
+figure {
+    border: thin var(--main-color-two) solid !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-flow: column !important;
+    padding: 5px !important;
+    /*max-width: 220px !important;*/
+    margin: auto !important;
+    width: 90% !important;
+}
+.article_img {
+    /*max-width: 220px !important;*/
+    /*max-height: 150px !important;*/
+    height: 440px !important;
+    cursor: zoom-in;
+    /*width: 450px !important;*/
+}
+figure:hover {
+    transform: scale(1.4) !important;
+}
+figcaption {
+    background-color: var(--main-color-one);
+    color: var(--white-color);
+    font-style: italic !important;
+    padding: 3px !important;
+    text-align: center !important;
+}
+
+/* Boutons de partage des articles sur les réseaux sociaux */
+.list-share-social-btn {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+    /*padding: 0 350px !important;*/
+    padding: 0 250px !important;
+}
+.share_twitter {
+    border-radius: 30px !important;
+    color: var(--white-color) !important;
+    background-color: #55ACEE !important;
+}
+.share_twitter:hover {
+    border-radius: 30px !important;
+    border: 1px solid #55ACEE !important;
+    color: #55ACEE !important;
+    background-color: var(--white-color) !important;
+}
+.share_facebook {
+    border-radius: 30px !important;
+    color: var(--white-color) !important;
+    background-color: #4C67A1 !important;
+}
+.share_facebook:hover {
+    border-radius: 30px !important;
+    border: 1px solid #4C67A1 !important;
+    color: #4C67A1 !important;
+    background-color: var(--white-color) !important;
+}
+.share_linkedin {
+    border-radius: 30px !important;
+    color: var(--white-color) !important;
+    background-color: #0177B5 !important;
+}
+.share_linkedin:hover {
+    border-radius: 30px !important;
+    border: 1px solid #0177B5 !important;
+    color: #0177B5 !important;
+    background-color: var(--white-color) !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card des projets */
+
+/* Design de la card */
+.project-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+
+/* Intérieur de la card */
+.project-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 20px !important;
+    transition: all .3s !important;
+}
+.project-card__name {
+    margin-bottom: 15px !important;
+}
+.project-card__txt {
+    margin-bottom: 15px !important;
+}
+.project-card__subtxt {
+    margin-bottom: 15px !important;
+}
+
+/* Design des 6 cartes projets */
+.project-card__card {
+    border-radius: 12px !important;
+    border-color: var(--main-color-one) !important;
+}
+.project-card__title {
+
+}
+.project_card__body {
+    color: var(--main-font-color) !important;
+}
+.project-card__footer {
+    /*background-image: linear-gradient(-20deg, #ffc107 0%, #dc3545 100%) !important;*/
+    background-color: var(--main-color-one) !important;
+    font-size: 16px !important;
+}
+.project-link {
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    color: var(--white-color) !important;
+}
+
+/* Gestion du texte caché via le btn Afficher la suite */
+.hidden-content {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.5s;
+}
+.hidden-content.visible {
+    display: inline;
+    width: auto;
+    height: auto;
+    opacity: 1;
+}
+.hide-link {
+    color: var(--main-color-two) !important;
+    background-color: transparent !important;
+    /*border: 2px solid var(--main-color-one) !important;*/
+    cursor: pointer !important;
+    /*border-radius: 30px !important;*/
+}
+.hide-link:hover {
+    text-decoration: underline !important;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card des compétences */
+
+/* Design de la card */
+.skills-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+
+/* Intérieur de la card */
+.skills-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 20px !important;
+    transition: all .3s !important;
+}
+.skills-card__name {
+    margin-bottom: 15px !important;
+}
+.skills-card__txt {
+    margin-bottom: 15px !important;
+}
+.skills-card__subtxt {
+    margin-bottom: 15px !important;
+}
+
+/* Placement des logos */
+.skill-content {
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 60px !important;
+}
+
+.skill-type {
+    padding-top: 20px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    /*padding-left: 20px !important;*/
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Titre des catégories des compétences */
+.skill_category_title {
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    color: var(--main-font-color) !important;
+}
+
+/* Format des logos */
+.webLogo {
+    width: 120px !important;
+    height: 120px !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.webLogoCss {
+    width: 90px !important;
+    height: 120px !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.webLogoJS {
+    width: 90px !important;
+    height: 120px !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.webLogoPhp {
+    width: 140px !important;
+    height: 100px !important;
+    padding-top: 20px !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.webLogoMysql {
+    width: 140px !important;
+    height: 100px !important;
+    padding-top: 20px !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.front {
+    display: inline-block !important;
+    margin:0 auto !important;
+    /*width: 100px !important;*/
+}
+.back {
+    display: inline-block !important;
+    margin:0 auto !important;
+}
+.frmwrk {
+    display: inline-block !important;
+    margin:0 auto !important;
+}
+.cms {
+    display: inline-block !important;
+    margin:0 auto !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card des différents sites réalisés */
+
+/* Design de la card */
+.created-website-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+/* Intérieur de la card */
+.created-website-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 20px !important;
+    transition: all .3s !important;
+}
+.created-website-card__name {
+    margin-bottom: 15px !important;
+}
+.created-website-card__txt {
+    margin-bottom: 15px !important;
+}
+
+/* Design des cards sur les sites créés */
+.created-website-card__card {
+    border-radius: 12px !important;
+    border-color: var(--main-color-one) !important;
+}
+.created-website-card__title {
+
+}
+.created-website-card__title:hover {
+    color: var(--main-color-two) !important;
+    transform: translateY(-5px) !important;
+}
+.created-website_card__body {
+    color: var(--main-font-color) !important;
+}
+.created-website-card__footer {
+    /*background-image: linear-gradient(-20deg, #ffc107 0%, #dc3545 100%) !important;*/
+    background-color: var(--main-color-one) !important;
+    font-size: 16px; !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design du Footer */
+.footer {
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+}
+
+.social-media-list {
+    margin: auto !important;
+    width: 60% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.second-social-line {
+    margin-top: -60px !important;
+    margin-left: 40px !important;
+}
+
+.social-link {
+    text-decoration: none !important;
+    color: var(--main-font-color) !important;
+}
+
+/* Icônes réseaux sociaux */
+.social_icon:hover {
+    color: var(--main-color-one) !important;
+    size: 26px !important;
+    transform: scale(1.75) !important;
+    transition: background-color .5s, transform .5s ease-out !important;
+}
+
+/* Ajout de la main du lien sur l'icône du formulaire de contact */
+#contact_btn_footer {
+    cursor: pointer !important;
+}
+
+/* Infos de signature */
+.footer_info {
+    font-size: 18px !important;
+}
+
+/* Année du copyright */
+#current_year {
+    margin: 20px !important;
+    width: 200px !important;
+    height: 200px !important;
+    position: relative !important;
+}
+
+.copyright {
+    text-decoration: none !important;
+    font-weight: bold !important;
+    color: var(--main-font-color) !important;
+
+}
+.copyright:hover {
+    color: var(--main-color-two) !important;
+}
+
+/* Lien des mentions légales */
+.legalNotice-link {
+    text-decoration: none !important;
+    font-size: 16px !important;
+    color: var(--main-font-color) !important;
+}
+.legalNotice-link:hover {
+    text-decoration: none !important;
+    font-size: 16px !important;
+    color: var(--main-color-two) !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Page des Mentions légales */
+
+.legalNotice-title {
+    font-size: 72px !important;
+    font-weight: lighter !important;
+    color: var(--white-color) !important;
+    margin-top: -120px !important;
+    margin-bottom: 40px !important;
+    /*-------Texte avec image en fond--------*/
+    background: url("../images/email-pattern.png") no-repeat;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+/* Design de la card */
+.legalNotice-card {
+    margin: auto !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+}
+/* Intérieur de la card */
+.legalNotice-card__cnt {
+    /*margin-top: -35px !important;*/
+    text-align: center !important;
+    padding: 0 20px !important;
+    padding-bottom: 40px !important;
+    transition: all .3s !important;
+}
+.legalNotice-card__name {
+    margin-bottom: 15px !important;
+}
+.legalNotice-card__txt {
+    margin-bottom: 15px !important;
+}
+
+.linkToWebsite {
+    text-decoration: none !important;
+    color: var(--main-color-two) !important;
+}
+.linkToWebsite:hover {
+    text-decoration: none !important;
+    color: var(--main-color-one) !important;
+}
+
+/* Design du bouton de retour en arrière */
+.btn-back-to-home {
+    float: right !important;
+    color: var(--white-color);
+    border-radius: 30px !important;
+    background: var(--main-color-one) !important;
+}
+.btn-back-to-home:hover {
+    background: linear-gradient(130deg, var(--main-color-one), var(--main-color-two)) !important;
+    box-shadow: 0px 7px 30px var(--main-font-color) !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Design de la card des erreurs (URL, Exception, ...) */
+
+/* Design de la card */
+.error-card {
+    margin: auto !important;
+    padding: 20px !important;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6) !important;
+    border-radius: 12px !important;
+    background-image: url("../images/email-pattern.png") !important;
+    background-attachment: fixed !important;
+    /*position: relative !important;*/
+    overflow: initial !important;
+}
+
+.error-card a {
+    color: var(--main-color-two) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+}
+.error-card a:hover {
+    color: var(--main-color-two) !important;
+    text-decoration: underline !important;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* Gestion du responsive Media Queries */
+
+/* Tablette */
+@media only screen and (max-width: 992px) {
+
+    /*Largeur des cards */
+    .profile-card, .description-card, .blog-card, .project-card, .skills-card, .created-website-card, .blog-page-card, .article-page-card {
+        margin: auto -15px !important;
+    }
+
+    /* Boutons de CV et de contact de la première card */
+    .profile-btn {
+        text-align: center !important;
+        /*width: 100% !important;*/
+        padding: 0 100px !important;
+    }
+
+    /* Retrait des textes des projets pour la vue mobile */
+    .hidden_sm {
+        display: none !important;
+    }
+
+    /* Retrait du logo "Message" du menu de navigation */
+    .contact-nav {
+        display: none !important;
+    }
+
+    /* Adaptation des liens du menu du site */
+    .navbar-nav {
+        margin: 15px 85px !important;
+    }
+    .nav-link {
+        text-align: center !important;
+    }
+
+    /* Adaptation des liens du menu du blog */
+    .postMenu {
+        text-align: center !important;
+        /*width: 100% !important;*/
+        padding: 0 100px !important;
+    }
+
+    /* Expression de la card de présentation */
+    .blockquote_description {
+        margin-left: 400px !important;
+    }
+
+    /* Adaptation des btns de partage du blog */
+    .list-share-social-btn {
+        padding: initial !important;
+    }
+
+}
+
+/* Smartphone */
+@media only screen and (max-width: 570px) {
+
+    /* Largeur des cards */
+    .generalPosts-card {
+        margin: 10px -15px !important;
+    }
+
+    /* Adaptation des liens du menu du site */
+    .navbar-nav {
+        margin: 15px 35px !important;
+    }
+
+    /* Boutons de CV et de contact de la première card */
+    .profile-btn {
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+    .btn-cv, .btn-contact {
+        margin: 4px auto !important;
+    }
+
+    /* Format des logos */
+    .webLogo {
+        width: 50px !important;
+        height: 50px !important;
+        /*padding-left: 65px !important;*/
+    }
+    .webLogoCss {
+        width: 35px !important;
+        height: 50px !important;
+        /*padding-left: 70px !important;*/
+    }
+    .webLogoJS {
+        width: 35px !important;
+        height: 50px !important;
+        /*padding-left: 70px !important;*/
+    }
+    .webLogoPhp {
+        width: 60px !important;
+        height: 50px !important;
+        /*padding-left: 55px !important;*/
+    }
+    .webLogoMysql {
+        width: 60px !important;
+        height: 50px !important;
+        /*padding-left: 55px !important;*/
+    }
+
+    .skill-content {
+        horiz-align: center !important;
+        padding: 0 3px !important;
+    }
+
+    /* Titre de la page du blog */
+    .blog-page-title {
+        font-size: 50px !important;
+    }
+
+    /* Titre de la page de l'article */
+    .article-page-title {
+        font-size: 44px !important;
+    }
+
+    /* Adaptation des liens du menu du blog */
+    .postMenu {
+        text-align: center !important;
+        /*width: 100% !important;*/
+        padding: 0 10px !important;
+    }
+    .blog-menu-card {
+        margin-bottom: 25px !important;
+    }
+
+    /* Expression de la card de présentation */
+    .blockquote_description {
+        margin-left: initial !important;
+    }
+
+    /* Image à l'intérieur d'un article */
+    figure {
+        width: 100% !important;
+    }
+    .article_img {
+        /*max-width: 220px !important;*/
+        /*max-height: 150px !important;*/
+        height: 120px !important;
+        /*width: 450px !important;*/
+    }
+
+    /* Adaptation des btns de partage du blog */
+    .share_twitter, .share_facebook, .share_linkedin {
+        margin: 5px 1px !important;
+    }
+
+    /* Ligne des réseaux sociaux du footer */
+    .social-media-list {
+        width: 90% !important;
+    }
+
+    .second-social-line {
+        margin-left: 1px !important;
+    }
+}

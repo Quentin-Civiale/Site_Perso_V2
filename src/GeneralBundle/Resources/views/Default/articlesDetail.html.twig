@@ -1,0 +1,119 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WordPress{% endblock %}
+
+{% block articlesDetail %}
+
+    <div class="col-sm-8 offset-sm-2 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+        <div class="article-page-title text-center">
+            L'Outil WordPress
+        </div>
+    </div>
+
+    <div class="buttonUp">
+        <a href="#top" id="btn-to-top" title="Retour vers le haut"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card article-page-card">
+            <img class="card-img-top" src="{{ asset('images/blog-banner2.png') }}" alt="Card image cap">
+            <div class="card-body">
+                <div class="article-page-card__cnt">
+                    <h1 class="card-title article-page-card__name">WordPress <i class="fab fa-wordpress"></i></h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2>
+                        Un outil simple, à la porté de tous !
+                    </h2>
+                    <br/>
+                    <div class="justify">
+                        <p>
+                            Whaouhh mais quel super outil !
+                            <br/>
+                            Je ne connaissais rien aux systèmes de gestion de contenu lorsque j'ai découvert le
+                            <a href="https://fr.wordpress.org/" target="_blank" title="site du CMS WordPress">
+                                CMS WordPress
+                            </a>
+                            via le premier projet a réaliser durant ma formation, en effet, avec 34,7 % des sites internets
+                            créés avec cet outil, on ne peut pas réaliser des sites sans avoir essayé ce logiciel PHP.
+                        </p>
+                        <p>
+                            Tout d'abord, cet outil est génial pour créer un site vitrine, un blog, potfolio, ..., pourquoi ?
+                            Car tout est fait pour faciliter la création et la gestion web. Entre une interface simple et accessible, des thèmes
+                            en quantité (presque) illimitéé, des plugins de toutes sortes (intégration de cartes, sécurité, référencement web,
+                            sauvegardes, gestion d'évènements, et j'en passe ...), on peut créer des tonnes de sites sans savoir coder (ou presque !
+                            parce que le code, c'est la vie !)
+                        </p>
+                        <p>
+                            Ce
+                            <abbr title="Content-Management-System ou Système de Gestion de Contenu en fr">
+                                CMS
+                            </abbr>
+                            m'a permis de créer facilement mon premier projet, le site internet d'une commune. Après avoir choisi un thème
+                            adapté à cette dernière, il m'a fallu personnaliser ce thème. C'est-à-dire que je n'avais qu'à modifier le contenu
+                            (titre, éléments du menu, contenu de la page d'accueil, photos, articles, contenu des pages, ...), toute la partie
+                            design et position des divers éléments étaient gérer par le thème lui-même.
+                            <br/>
+                            En fait, je pourrais comparer ça à une voiture, vous avez la base: une carrosserie, un moteur, des jantes et des
+                            options, et vous choisissez vous-même la couleur de la peinture, la taille du moteur, la taille des jantes, et si
+                            vous souhaitez le régulateur, la clim, etc.
+                            Bref, après avoir modifier chaque partie du thème et bien mon site était en ligne sans avoir codé la moindre
+                            ligne ! (Non ce n'est pas tout à fait vrai hahaha)
+                            <br/>
+                            J'ai dû modifier la couleur générale du thème afin de l'adapter aux couleurs de la commune, mais pas d'inquiétude,
+                            une partie du thème est réservée au CSS additionnel en cas d'impossibilité de modification dans les parties
+                            basiques de celui-ci.
+                        </p>
+
+                        <figure>
+                            <img class="article_img" src="{{ asset('images/Screenshot_Wordpress.png') }}" alt="Tableau de bord WordPress">
+                            <figcaption>Tableau de bord WordPress</figcaption>
+                        </figure>
+
+                        <br/>
+                        <p>
+                            Pour conclure, si vous débutez dans le développement ou si vous êtes totalement ignorant sur le monde fantastique
+                            du web (comme moi au tout début), rassurez-vous, WordPress est sûrement fait pour vous !
+                            Facile et accessible à tous, WordPress est un super outil de création de site web, et il vous permettra de réaliser
+                            le site que vous souhaitiez avoir.
+                        </p>
+                        <br/>
+                    </div>
+                    <div class="offset-lg-8 offset-md-9 italic">
+                        <p>Expérience publiée le 11 juillet 2020</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-share-social-btn">
+                <button class="btn share_twitter" onclick="analyticsSharingArticle('twitter', 'Wordpress')" data-url="https://quentin-civiale.fr/blog/article/wordpress">
+                    <i class="fab fa-twitter"></i>
+                    Partager sur Twitter
+                </button>
+
+                <button class="btn share_facebook" onclick="analyticsSharingArticle('facebook', 'Wordpress')" data-url="https://quentin-civiale.fr/blog/article/wordpress">
+                    <i class="fab fa-facebook-f"></i>
+                    Partager sur Facebook
+                </button>
+
+                <button class="btn share_linkedin" onclick="analyticsSharingArticle('linkedin', 'Wordpress')" data-url="https://quentin-civiale.fr/blog/article/wordpress">
+                    <i class="fab fa-linkedin-in"></i>
+                    Partager sur Linkedin
+                </button>
+            </div>
+
+            <div class="col-lg-10 offset-lg-1">
+                <div>
+                    <a href="{{ path('blog') }}" class="link_to_article_view"><i class="fas fa-arrow-left"></i> Retour au blog </a>
+                </div>
+
+                <br/>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block blog %}
+
+    <div class="col-sm-8 offset-sm-2 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+        <div class="blog-page-title text-center">
+            Bienvenue sur le blog
+        </div>
+    </div>
+
+    <div class="buttonUp">
+        <a href="#top" id="btn-to-top" title="Retour vers le haut"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <div class="col-lg-10 offset-lg-1">
+
+        <div class="card blog-page-card">
+            <div class="card-body">
+                <div class="blog-page-card__cnt">
+                    <h1 class="card-title blog-page-card__name">Petit rappel de mon parcours</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <h2>
+                        Comment j'en suis arrivé au développement web ?
+                    </h2>
+                    <br/>
+                    <div class="justify hideShow">
+                        {% include '@General/Default/aboutMe.html.twig' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+{#        <br/>#}
+
+{#        <div class="row postMenu">#}
+{#            <div class="offset-lg-3 col-lg-3 offset-md-2 col-md-4 offset-sm-1 col-sm-5">#}
+{#               <div class="card blog-menu-card">#}
+{#                   <div class="card-body articlesCard">#}
+{#                        <div class="blog-menu-card__title"><a href="#" class="articlesType"><i class="fas fa-newspaper"></i> Articles</a></div>#}
+{#                   </div>#}
+{#                   <div class="card-footer blog-menu-card__footer articlesFooter"></div>#}
+{#               </div>#}
+{#            </div>#}
+
+{#            <div class="col-lg-3 col-md-4 col-sm-5">#}
+{#                <div class="card blog-menu-card">#}
+{#                    <div class="card-body tutosCard">#}
+{#                        <div class="blog-menu-card__title"><a href="#" class="tutosType"><i class="fas fa-tools"></i> Tutos</a></div>#}
+{#                    </div>#}
+{#                    <div class="card-footer blog-menu-card__footer tutosFooter"></div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+
+        <br/>
+        <hr/>
+        <br/>
+
+        <div class="card-deck">
+            <div class="card generalPosts-card">
+                <img class="card-img-top" src="{{ asset('images/blog-banner1.png') }}" alt="Card image cap">
+                <div class="card-body">
+                    <div class="generalPosts-card__cnt">
+                        <h1 class="card-title generalPosts-card__name">Symfony <i class="fab fa-symfony"></i></h1>
+                    </div>
+                    <div class="col-lg-10 offset-lg-1 col-md-12">
+                        <div>
+                            <h2>Un framework web qui m'a adopté !</h2><kbd>publié le 1er juillet 2020</kbd>
+                        </div>
+                        <br/>
+                        <div class="offset-lg-6 offset-md-2">
+                            <a href="{{ path('articleDetail') }}" class="link_to_article_view" onclick="analyticsArticle('callArticleSymfony_byBlogView')"> Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer blog-menu-card__footer articlesFooter"></div>
+            </div>
+
+            <br/>
+
+            <div class="card generalPosts-card">
+                <img class="card-img-top" src="{{ asset('images/blog-banner2.png') }}" alt="Card image cap">
+                <div class="card-body">
+                    <div class="generalPosts-card__cnt">
+                        <h1 class="card-title generalPosts-card__name">WordPress <i class="fab fa-wordpress"></i></h1>
+                    </div>
+                    <div class="col-lg-10 offset-lg-1 col-md-12">
+                        <div>
+                            <h2>Un outil simple, à la porté de tous !</h2><kbd>publié le 11 juillet 2020</kbd>
+                        </div>
+                        <br/>
+                        <div class="offset-lg-6 offset-md-2">
+                            <a href="{{ path('articlesDetail') }}" class="link_to_article_view" onclick="analyticsArticle('callArticleWordpress_byBlogView')"> Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer blog-menu-card__footer articlesFooter"></div>
+            </div>
+
+{#            <br/>#}
+
+{#            <div class="card generalPosts-card">#}
+{#                <img class="card-img-top" src="{{ asset('images/blog-banner2.png') }}" alt="Card image cap">#}
+{#                <div class="card-body">#}
+{#                    <div class="generalPosts-card__cnt">#}
+{#                        <h1 class="card-title generalPosts-card__name">Wordpress <i class="fab fa-wordpress"></i></h1>#}
+{#                    </div>#}
+{#                    <div class="col-lg-10 offset-lg-1 col-md-12">#}
+{#                        <div>#}
+{#                            <h2>Un outil simple, à la porté de tous !</h2><kbd>écrit le ...</kbd>#}
+{#                        </div>#}
+{#                        <br/>#}
+{#                        <div class="offset-lg-6 offset-md-2">#}
+{#                            <a href="{{ path('articleDetail') }}" class="link_to_article_view"> Lire l'article <i class="fas fa-arrow-right"></i></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="card-footer blog-menu-card__footer articlesFooter"></div>#}
+{#            </div>#}
+        </div>
+
+{#        <br/>#}
+{#        <br/>#}
+
+{#        <div class="card-deck">#}
+{#            <div class="card generalPosts-card">#}
+{#                <img class="card-img-top" src="{{ asset('images/blog-banner3.png') }}" alt="Card image cap">#}
+{#                <div class="card-body">#}
+{#                    <div class="generalPosts-card__cnt">#}
+{#                        <h1 class="card-title generalPosts-card__name">JavaScript <i class="fab fa-symfony"></i></h1>#}
+{#                    </div>#}
+{#                    <div class="col-lg-10 offset-lg-1 col-md-12">#}
+{#                        <div>#}
+{#                            <h2>Comment rendre intéractif un site web </h2><kbd>écrit le ...</kbd>#}
+{#                        </div>#}
+{#                        <br/>#}
+{#                        <div class="offset-lg-6 offset-md-2">#}
+{#                            <a href="{{ path('articleDetail') }}" class="link_to_article_view"> Lire l'article <i class="fas fa-arrow-right"></i></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="card-footer blog-menu-card__footer articlesFooter"></div>#}
+{#            </div>#}
+
+{#            <br/>#}
+
+{#            <div class="card generalPosts-card">#}
+{#                <img class="card-img-top" src="{{ asset('images/blog-banner4.png') }}" alt="Card image cap">#}
+{#                <div class="card-body">#}
+{#                    <div class="generalPosts-card__cnt">#}
+{#                        <h1 class="card-title generalPosts-card__name">Material Design <i class="fab fa-symfony"></i></h1>#}
+{#                    </div>#}
+{#                    <div class="col-lg-10 offset-lg-1 col-md-12">#}
+{#                        <div>#}
+{#                            <h2>Des règles de design made by Google ! </h2><kbd>écrit le ...</kbd>#}
+{#                        </div>#}
+{#                        <br/>#}
+{#                        <div class="offset-lg-6 offset-md-2">#}
+{#                            <a href="{{ path('articleDetail') }}" class="link_to_article_view"> Lire l'article <i class="fas fa-arrow-right"></i></a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="card-footer blog-menu-card__footer articlesFooter"></div>#}
+{#            </div>#}
+
+{#        </div>#}
+
+    </div>
+
+    <br/>
+
+{% endblock %}
