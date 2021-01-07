@@ -41,19 +41,19 @@ body {
 /*    --white-color: #ffffff !important;*/
 /*}*/
 
-/*:root {*/
-/*    --main-color-one: #324e63 !important;*/
-/*    --main-color-two: #03989e !important;*/
-/*    --main-font-color: #03989e !important;*/
-/*    --white-color: #ffffff !important;*/
-/*}*/
-
 :root {
-    --main-color-one: #394c40 !important;
-    --main-color-two: #CA8445 !important;
-    --main-font-color: #69623B !important;
+    --main-color-one: #324e63 !important;
+    --main-color-two: #03989e !important;
+    --main-font-color: #014C4F !important;
     --white-color: #ffffff !important;
 }
+
+/*:root {*/
+/*    --main-color-one: #394c40 !important;*/
+/*    --main-color-two: #CA8445 !important;*/
+/*    --main-font-color: #69623B !important;*/
+/*    --white-color: #ffffff !important;*/
+/*}*/
 
 /*:root {*/
 /*    --main-color-one: #2E3D34 !important;*/
@@ -566,7 +566,7 @@ kbd {
     background-attachment: fixed !important;
     border: var(--white-color) solid 4px !important;
     /*background-image: linear-gradient(130deg, var(--main-color-one) 10%, var(--main-color-two) 100%) !important;*/
-    background-image: url("../images/tesselation4.3.png") !important;
+    background-image: url("../images/extracolor5.2.png") !important;
     /*cursor: pointer !important;*/
     /*position: relative !important;*/
 }

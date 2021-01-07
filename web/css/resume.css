@@ -31,10 +31,17 @@ body {
 }
 
 /* Variable CSS des couleurs */
+/*:root {*/
+/*    --cv-main-color-one: #394c40 !important;*/
+/*    --cv-main-color-two: #CA8445 !important;*/
+/*    --cv-main-font-color: #69623B !important;*/
+/*    --cv-white-color: #ffffff !important;*/
+/*}*/
+
 :root {
-    --cv-main-color-one: #394c40 !important;
-    --cv-main-color-two: #CA8445 !important;
-    --cv-main-font-color: #69623B !important;
+    --cv-main-color-one: #324e63 !important;
+    --cv-main-color-two: #03989e !important;
+    --cv-main-font-color: #014C4F !important;
     --cv-white-color: #ffffff !important;
 }
 
@@ -524,6 +531,16 @@ h5 {
     /*font-weight: 700 !important;*/
     /*font-size: 34px !important;*/
     /*color: var(--cv-main-color-one) !important;*/
+}
+
+/* Couleur de lien dans l'expérience pro */
+.experience_webdev_link_site {
+    text-decoration: none !important;
+    color: var(--cv-main-color-two) !important;
+}
+.experience_webdev_link_site:hover {
+    text-decoration: underline !important;
+    color: var(--cv-main-color-one) !important;
 }
 
 /* Timeline */
